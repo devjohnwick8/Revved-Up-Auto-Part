@@ -1,0 +1,25 @@
+.image-preview{
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 20px;
+    width: 250px;
+    animation: fadeIn 5s;
+    padding: 5px;
+}
+.img-list{
+    width: 35px;
+    border-radius: 8px;
+    height: 30px;
+}
+
+
+.grn_table #myTabContent {
+    padding-top: 10px;
+}
+
+.grn_table .table td:first-child {
+    font-size: 16px;
+    font-weight: 700;
+    width: 70%;
+}

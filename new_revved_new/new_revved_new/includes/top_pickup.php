@@ -1,0 +1,33 @@
+  <!-- speedy_sec start  -->
+  <section class="speedy_sec">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-6">
+                  <div class="speed_div text-center wow zoomIn" data-wow-duration="2s">
+                      <img src="images/sp_1.png" class="img-fluid" alt="">
+                      <h4>Speedy Delievery </h4>
+                      <small>Free Same Day Shipping! </small>
+                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-6">
+                  <div class="speed_div text-center wow zoomIn" data-wow-duration="2s">
+                      <img src="images/sp_2.png" class="img-fluid" alt="">
+                      <h4 class="toprelate">Pick Up Availability </h4>
+                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-6">
+                  <div class="speed_div text-center wow zoomIn" data-wow-duration="2s">
+                      <img src="images/sp_3.png" class="img-fluid" alt="">
+                      <h4>Network Of Warehouses <br> NationWide </h4>
+                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-6">
+                  <div class="speed_div text-center wow zoomIn" data-wow-duration="2s">
+                      <img src="images/sp_4.png" class="img-fluid" alt="">
+                      <h4>100% Customer <br> Satisfaction</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- speedy_sec start  -->

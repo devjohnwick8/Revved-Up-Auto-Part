@@ -1,0 +1,2 @@
+[20-Jan-2022 23:01:38 UTC] PHP Fatal error:  Cannot redeclare active() (previously declared in /home1/shox/public_html/robertcardona/storage/framework/views/a91653364fee4a2f78351aea01780a8b9827246c.php:2) in /home1/shox/public_html/robertcardona/storage/framework/views/a91653364fee4a2f78351aea01780a8b9827246c.php on line 2
+[31-Jan-2022 20:10:57 UTC] PHP Fatal error:  Constant expression contains invalid operations in /home1/shox/public_html/robertcardona/app/Http/Controllers/UIAuthController.php on line 13
