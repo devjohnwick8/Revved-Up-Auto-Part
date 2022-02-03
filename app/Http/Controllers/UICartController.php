@@ -16,8 +16,9 @@ class UICartController extends EmailController
 {
     public function cart()
     {
-        session()->forget('login_cart');
+
         $cart = session()->get('cart');
+
         if ($cart != []) {
             foreach ($cart as $value) {
                 $products[] = ProductsModel::with('product_year')->where('id', $value['id'])->first();
@@ -139,16 +140,20 @@ class UICartController extends EmailController
 
     public function add_to_cart(Request $request)
     {
+
         $stocks = ProductsModel::where('id', $request->id)->first('stock');
         if ($request->quantity <= $stocks->stock) {
             $cart = session()->get('cart', []);
             if (isset($cart[$request->id])) {
                 $cart[$request->id]['quantity'] += $request->quantity;
+                $cart[$request->id]['price'] = $request->price_cart;
+
                 $comment = "Product has been added Successfully";
             } else {
                 $cart[$request->id] = [
                     "id" => $request->id,
                     "quantity" => $request->quantity,
+                    "price" =>$request->price_cart,
                 ];
                 $comment = "Product has been added Successfully";
             }
@@ -173,7 +178,6 @@ class UICartController extends EmailController
 
      public function event_stripe(Request $req)
     {
-
         $total = session()->get('subtotal');
         $order_number = rand(1999999999999999, 9999999999999999);
         $user = Auth::user();

@@ -72,6 +72,7 @@
                         <h4>Retail Price: <span style="text-decoration: line-through">${{$single_product->retail_price}}
                             </span> </h4>
                         <h5>Our Price: $ <span id="opt_price">{{$single_product->our_price }}</span></h5>
+                        <input type="text" hidden id="act_price" value="{{$single_product->our_price}}"/>
                     </div>
 
                     <div class="main_sku">
@@ -114,11 +115,10 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input id="product_id" type="text" hidden value="{{$value->product_id}}" />
             
-                                <select class="option" name="cars">
+                                <select class="xyz"  name="cars">
                                  <option value="0"> ----- Please Select ----- </option>
-                               
                                     @foreach($product_option[$key] as  $values)
-                                        <option value="{{$values->id}}">{{$values->title}} - ${{$values->price}}</option>
+                                        <option  value="{{$values->price}}">{{$values->title}} - ${{$values->price}}</option>
                                     @endforeach
                                         </select>
                                     
@@ -332,13 +332,30 @@
 
 @push('js')
 <script>
+
+var xyztotal= 0;
+    $('.xyz').change(function(){
+        xyztotal =0;
+        $('.xyz').each(function(k,v){
+          xyztotal+= parseInt($(this).val());
+        })
+        console.log(xyztotal);
+        var act_price = parseInt($('#act_price').val()); 
+        let added_val = xyztotal+parseInt(act_price);
+        $('#opt_price').html(added_val);
+    })
+
+
+
     $('#form_submit').click(function() {
         product_id = $(this).data("id");
         quantity = parseInt($('#quantity').val());
+        price_cart = xyztotal;
         console.log(product_id, quantity);
         var data = {
             'id': product_id,
             'quantity': quantity,
+            'price_cart' : price_cart,
             '_token': '{{csrf_token()}}'
         };
 
@@ -378,52 +395,50 @@
 
     })
 
-testssa('.option');
-function testssa(changed_id){
-    $(changed_id).change(function() {
-        prod_id = $(this).val();
-        product_id = $('#product_id').val();
-        console.log(product_id);    
-        // quantity = parseInt($('#quantity').val());
-        var data = {
-            'id': prod_id,
-            'product_id': product_id,
-            '_token': '{{csrf_token()}}'
-        };
+ 
 
-        var url = "{{route('UI_available_option')}}";
-        var res = AjaxRequest(url, data);
-        if (res.status == 1) {
 
-        //    var x = parseInt(res.prod_option) + parseInt(our_price)
-            $('#opt_price').html(res.opt_option);
-        }
+    // $("#option").change(function () {
+
+    //     let opt_val =parseInt(this.value);
+    //     let opt = $('#opt_price').html();
+    //     $('#opt_price').html(parseInt(opt));
+
+    //     let added_val = opt_val+parseInt(opt);
+    //     $('#opt_price').html(added_val);
+
+    //     console.log(opt_val+parseInt(opt));
+    //     // var end = this.value;
+    //     // var firstDropVal = $('#pick').val();
+    // });
+// testssa('.option');
+// function testssa(changed_id){
+//     $(changed_id).change(function() {
+//         prod_id = $(this).val();
+//         product_id = $('#product_id').val();
+//         console.log(product_id);    
+//         // quantity = parseInt($('#quantity').val());
+//         var data = {
+//             'id': prod_id,
+//             'product_id': product_id,
+//             '_token': '{{csrf_token()}}'
+//         };
+
+//         var url = "{{route('UI_available_option')}}";
+//         var res = AjaxRequest(url, data);
+//         if (res.status == 1) {
+
+//         //    var x = parseInt(res.prod_option) + parseInt(our_price)
+//             $('#opt_price').html(res.opt_option);
+//         }
        
 
-    })
-}
+//     })
+// }
 
-    // $('#option').change(function() {
-    //     prod_id = $(this).val();
-    //     product_id = $('#product_id').val();
-    //     console.log(product_id);    
-    //     // quantity = parseInt($('#quantity').val());
-    //     var data = {
-    //         'id': prod_id,
-    //         'product_id': product_id,
-    //         '_token': '{{csrf_token()}}'
-    //     };
-
-    //     var url = "{{route('UI_available_option')}}";
-    //     var res = AjaxRequest(url, data);
-    //     if (res.status == 1) {
-
-    //     //    var x = parseInt(res.prod_option) + parseInt(our_price)
-    //         $('#opt_price').html(res.opt_option);
-    //     }
-       
-
-    // })
+  
+    
+    
 </script>
 @endpush
 

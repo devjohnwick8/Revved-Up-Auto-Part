@@ -149,7 +149,7 @@ class AdminProductDataController extends Controller
     function product_available_list()
     {
         //$products_available = ProductAvailableModel::orderby('id', 'ASC')->get();
-        $products_available = ProductAvailableModel::with('get_product')->orderby('id', 'ASC')->groupby('product_id')->get();
+        $products_available = ProductAvailableModel::with('get_product')->orderby('id', 'ASC')->groupby('id')->get();
         return view('admin.product-data.product-available.product-available-list', compact('products_available'));
     }
     function product_available_add()

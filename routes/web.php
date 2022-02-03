@@ -238,7 +238,7 @@ Route::get('customer_support', [UIController::class, 'customer_support'])->name(
 Route::get('damage_part', [UIController::class, 'damage_part'])->name('UI_damage_part');
 Route::get('defective_claims', [UIController::class, 'defective_claims'])->name('UI_defective_claims');
 Route::get('fitment_issue', [UIController::class, 'fitment_issue'])->name('UI_fitment_issue');
-Route::post('/available-option', [UIController::class, 'available_option'])->name('UI_available_option')->middleware('auth');
+Route::post('/available-option', [UIController::class, 'available_option'])->name('UI_available_option');
 Route::get('help', [UIController::class, 'help'])->name('UI_help');
 Route::get('/', [UIController::class, 'home'])->name('UI_home');
 

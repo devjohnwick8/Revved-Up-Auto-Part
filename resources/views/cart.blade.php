@@ -63,7 +63,7 @@
                                 </td>
 
                                 <td class="col-md-1 col-sm-1 col-xs-12">
-                                    <h4>${{$value->our_price}}</h4>
+                                    <h4>${{$value->our_price + $cart[$value->id]['price']}}</h4>
                                 </td>
 
                                 <td class=" col-md-1 col-sm-1 col-xs-12">
@@ -77,8 +77,8 @@
                                     </form>
                                 </td>
                                 <td class="col-md-1 col-sm-1 col-xs-12">
-                                    <h4>${{$value->our_price * $cart[$value->id]['quantity']}}</h4>
-                                    @php $subtotal += $value->our_price * $cart[$value->id]['quantity'] @endphp
+                                    <h4>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price'] }}</h4>
+                                    @php $subtotal += $value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price'] @endphp
 
                                 </td>
                             </tr>

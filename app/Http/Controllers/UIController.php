@@ -83,17 +83,10 @@ class UIController extends Controller
           return response()->json([ 'opt_option' => $total , 'status' => 1]);
 
         }else{
-            
-            $option = ProductOptionModel::find($request->id);
-
-            $product_available = ProductAvailableModel::find($option->available_id);
-            $product_option = ProductOptionModel::where('available_id',$product_available->id)->first();
-      
-            $product = ProductsModel::find($product_available->product_id);
+            $product_option = ProductOptionModel::find($request->id);
+            $product = ProductsModel::find($product_option->product_id);
             
             $total = $product->our_price + $product_option->price;
-
-            dd($total);
             // session()->put('option_price', $product_option->price);
             return response()->json([ 'opt_option' => $total , 'status' => 1]);
         }

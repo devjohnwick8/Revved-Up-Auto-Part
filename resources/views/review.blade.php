@@ -224,14 +224,13 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @if($products)
                             @foreach($products as $value)
                             <tr>
                                 <th class="recap">{{$value->title}} </th>
-                                <td>${{$value->our_price}}</td>
-                                <td>{{$cart[$value->id]['quantity']}}</td>
-                                <td>${{$value->our_price * $cart[$value->id]['quantity']}}</td>
+                                <td>${{$value->our_price + $cart[$value->id]['price']}}</td>
+                                <td>{{$cart[$value->id]['quantity'] + $cart[$value->id]['price']}}</td>
+                                <td>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price']}}</td>
                                 <!-- <th class="recap">2019 AUDI S3-2..0 liter L4-CID Radiator GAS, MAIN</th>
                                 <td>$160.80</td>
                                 <td>$160.80</td>
