@@ -90,7 +90,10 @@ class UISearchController extends Controller
 
     public function search_part(Request $request)
     {
-        $part = ProductsModel::where('title', $request->part)->first();
+        $part = ProductsModel::query()
+        ->where('sku', 'LIKE', "%{$request}%")
+        ->orWhere('title', 'LIKE', "%{$request}%")
+        ->first();
         if ($part) {
             return redirect()->route('UI_single_product', [$part->id]);
         } else {

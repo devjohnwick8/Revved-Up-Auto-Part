@@ -9,7 +9,8 @@ use App\Models\ProductsModel;
 use App\Models\PartNotFoundModel;
 use App\Models\ProductImageModel;
 use App\Models\SpecificationModel;
-use App\Models\SpecificationtModel;
+use App\Models\ProductAvailableModel;
+use App\Models\ProductOptionModel;
 use App\Models\VehicleFitmentModel;
 use Illuminate\Http\Request;
 use Stripe\Order;
@@ -28,12 +29,22 @@ class UIController extends Controller
     {
         $single_product = ProductsModel::with('images_take1')->where('id', $id)->first();
         $image_product = ProductImageModel::where('product_id', $id)->get();
-        // $product_specification = ProductSpecificationModel::where('product_id', $id)->get();
+        $product_available = ProductAvailableModel::where('product_id', $id)->get();
+        $product_option = null;
+        if($product_available){
+            foreach($product_available as $key => $value){
+               if($product_available[$key]->id){
+                   $product_option[] = ProductOptionModel::where('product_id', $id)->where('available_id' , $product_available[$key]->id)->get();
+               }
+            } 
+        }
+      
+      
         $product_fitment = VehicleFitmentModel::where('product_id', $id)->get()->last();
         $product_specification = SpecificationModel::where('product_id', $id)->first();
         $related_product = ProductsModel::with('images_take1')->where('make', $single_product->make)->get();
 
-        return view('single-product', compact('single_product', 'related_product', 'product_specification','product_fitment', 'image_product'));
+        return view('single-product', compact('single_product', 'related_product', 'product_specification', 'product_available', 'product_option','product_fitment', 'image_product'));
     }
     public function part_not_found()
     {
@@ -63,7 +74,30 @@ class UIController extends Controller
         //     ->where('id', $id)->first();
         return redirect()->back()->with('success', 'Form Submitted');
     }
+    public function available_option(Request $request)
+    {
+        if($request->id == 0){
+          $product = ProductsModel::find($request->product_id);
+          $total = $product->our_price ;
+          session()->put('option_price', 0);
+          return response()->json([ 'opt_option' => $total , 'status' => 1]);
 
+        }else{
+            
+            $option = ProductOptionModel::find($request->id);
+
+            $product_available = ProductAvailableModel::find($option->available_id);
+            $product_option = ProductOptionModel::where('available_id',$product_available->id)->first();
+      
+            $product = ProductsModel::find($product_available->product_id);
+            
+            $total = $product->our_price + $product_option->price;
+
+            dd($total);
+            // session()->put('option_price', $product_option->price);
+            return response()->json([ 'opt_option' => $total , 'status' => 1]);
+        }
+    }
 
 
     public function thank_you()

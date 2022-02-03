@@ -45,7 +45,7 @@ Route::group(['middleware' => ['protectedPage']], function () {
 
 
     /**Dashboard Routes */
-    Route::get('/admin/dashboard', [AdminBannerController::class, 'dashboard'])->name('admin_dashboard');
+    Route::get('/admin/dashboard', [AdminOrdersController::class, 'dashboard'])->name('admin_dashboard');
 
     /**Profile Routes */
     Route::get('/admin/profile', [AdminAuthController::class, 'admin_profile'])->name('admin_profile');
@@ -211,7 +211,7 @@ Route::get('/logout', [UIAuthController::class, 'user_logout'])->name('user_logo
 Route::get('/change-password', [UIAuthController::class, 'change_password'])->name('UI_change_password')->middleware('auth');; 
 Route::post('/my-password-update/{user?}', [UIAuthController::class, 'change_password_update'])->name('UI_change_password_Updated')->middleware('auth');
 Route::get('/my-profile', [UIAuthController::class, 'my_profile'])->name('UI_my_profile')->middleware('auth');
-Route::post('/my-profile-update/{user?}', [UIAuthController::class, 'my_profile_update'])->name('UI_my_profile_Updated')->middleware('auth');;
+Route::post('/my-profile-update/{user?}', [UIAuthController::class, 'my_profile_update'])->name('UI_my_profile_Updated')->middleware('auth');
 
 
 /**UI SEARCH ROUTES STARTS**/
@@ -238,6 +238,7 @@ Route::get('customer_support', [UIController::class, 'customer_support'])->name(
 Route::get('damage_part', [UIController::class, 'damage_part'])->name('UI_damage_part');
 Route::get('defective_claims', [UIController::class, 'defective_claims'])->name('UI_defective_claims');
 Route::get('fitment_issue', [UIController::class, 'fitment_issue'])->name('UI_fitment_issue');
+Route::post('/available-option', [UIController::class, 'available_option'])->name('UI_available_option')->middleware('auth');
 Route::get('help', [UIController::class, 'help'])->name('UI_help');
 Route::get('/', [UIController::class, 'home'])->name('UI_home');
 

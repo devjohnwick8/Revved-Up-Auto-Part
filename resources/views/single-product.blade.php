@@ -53,12 +53,7 @@
                             <div class="productMainDetail"><img src="{{asset('uploads/products/'.$value->title)}}" class="img-responsive" alt=""></div>
                         </div>
                         @endforeach
-                        <!-- <div>
-                            <div class="productMainDetail"><img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" class="img-responsive" alt=""></div>
-                        </div> -->
-                        <!-- <div>
-                            <div class="productMainDetail"><img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" class="img-responsive" alt=""></div>
-                        </div> -->
+            
                     </div>
                     <div class="slider slider-nav1">
                         @foreach($image_product as $value)
@@ -66,18 +61,7 @@
                             <div class="productlistBox"><img src="{{asset('uploads/products/'.$value->title)}}" class="img-responsive" alt=""></div>
                         </div>
                         @endforeach
-                        <!-- <div>
-                            <div class="productlistBox"><img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" class="img-responsive" alt=""></div>
-                        </div>
-                        <div>
-                            <div class="productlistBox"><img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" class="img-responsive" alt=""></div>
-                        </div> -->
-                        <!-- <div>
-                            <div class="productlistBox"><img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" class="img-responsive" alt=""></div>
-                        </div>
-                        <div>
-                            <div class="productlistBox"><img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" class="img-responsive" alt=""></div>
-                        </div> -->
+                 
                     </div>
                 </div>
             </div>
@@ -87,7 +71,7 @@
                     <div class="retail_price">
                         <h4>Retail Price: <span style="text-decoration: line-through">${{$single_product->retail_price}}
                             </span> </h4>
-                        <h5>Our Price: ${{$single_product->our_price}}</h5>
+                        <h5>Our Price: $ <span id="opt_price">{{$single_product->our_price }}</span></h5>
                     </div>
 
                     <div class="main_sku">
@@ -115,6 +99,34 @@
                                     </ul> -->
                                 </div>
                             </div>
+                        </div>
+                        <div> 
+                            @if($product_available)
+                            <br/>
+                            <h4>Available Options</h4>
+                           
+                            @foreach($product_available as $key =>$value)
+                            <div class="row">
+                          
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <label for="option">{{$value->heading}}</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="product_id" type="text" hidden value="{{$value->product_id}}" />
+            
+                                <select class="option" name="cars">
+                                 <option value="0"> ----- Please Select ----- </option>
+                               
+                                    @foreach($product_option[$key] as  $values)
+                                        <option value="{{$values->id}}">{{$values->title}} - ${{$values->price}}</option>
+                                    @endforeach
+                                        </select>
+                                    
+                                </div>
+                            </div>
+                            @endforeach
+                            @endif
+
                         </div>
 
                         <div class="main_dabba">
@@ -149,6 +161,10 @@
                                 </div>
                             </div>
                         </div>
+                       <br/>
+                       
+                       
+
                         <h5>Same Day Shipping</h5>
                     </div>
                 </div>
@@ -338,8 +354,8 @@
         
               if(res.status==1)
         {
-            // $('#cart_count').empty();
-            // $('#cart_count').html(res.cart_length);
+           
+            $('#cart_counter').html(res.cart_length);
 
             toastr["success"](res.comment);
             // toastr.info(res.comment);
@@ -361,6 +377,53 @@
         }
 
     })
+
+testssa('.option');
+function testssa(changed_id){
+    $(changed_id).change(function() {
+        prod_id = $(this).val();
+        product_id = $('#product_id').val();
+        console.log(product_id);    
+        // quantity = parseInt($('#quantity').val());
+        var data = {
+            'id': prod_id,
+            'product_id': product_id,
+            '_token': '{{csrf_token()}}'
+        };
+
+        var url = "{{route('UI_available_option')}}";
+        var res = AjaxRequest(url, data);
+        if (res.status == 1) {
+
+        //    var x = parseInt(res.prod_option) + parseInt(our_price)
+            $('#opt_price').html(res.opt_option);
+        }
+       
+
+    })
+}
+
+    // $('#option').change(function() {
+    //     prod_id = $(this).val();
+    //     product_id = $('#product_id').val();
+    //     console.log(product_id);    
+    //     // quantity = parseInt($('#quantity').val());
+    //     var data = {
+    //         'id': prod_id,
+    //         'product_id': product_id,
+    //         '_token': '{{csrf_token()}}'
+    //     };
+
+    //     var url = "{{route('UI_available_option')}}";
+    //     var res = AjaxRequest(url, data);
+    //     if (res.status == 1) {
+
+    //     //    var x = parseInt(res.prod_option) + parseInt(our_price)
+    //         $('#opt_price').html(res.opt_option);
+    //     }
+       
+
+    // })
 </script>
 @endpush
 

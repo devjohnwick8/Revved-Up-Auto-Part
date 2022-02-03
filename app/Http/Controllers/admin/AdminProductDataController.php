@@ -195,7 +195,7 @@ class AdminProductDataController extends Controller
     function product_option_list()
     {
         //$products_option = ProductOptionModel::orderby('id', 'ASC')->get();
-        $products_option = ProductOptionModel::with('get_available')->orderby('id', 'ASC')->groupby('product_id')->get();
+        $products_option = ProductOptionModel::with('get_available')->orderby('id', 'ASC')->groupby('available_id')->get();
         return view('admin.product-data.product-option.product-option-list', compact('products_option'));
     }
     function product_option_add()
@@ -213,19 +213,21 @@ class AdminProductDataController extends Controller
     
     function product_option_add_edit_data(ProductOptionModel $product_option, Request $request)
     {
-       
         $create = 1;
         (isset($product_option->id) and $product_option->id > 0) ? $create = 0 : $create = 1;
         foreach($request->title as $key=>$value)
         {
-            // dd($request);
-                // $product_option = new ProductOptionModel();
+
+            if($product_option->id == null){
+                $product_option = new ProductOptionModel();
+             }
                 $product_option->title = $request->title[$key];
                 $product_option->price = $request->price[$key];
 			    $product_option->available_id = $request->available_id;
 				$product_avail = ProductAvailableModel::where('id', $request->available_id)->first();
 			    $product_option->product_id = $product_avail->product_id;
                 $product_option->save();
+                $product_option->id = null;
         }
         if ($create == 0) {
             return back()->with('update', 'Updated Successfully');

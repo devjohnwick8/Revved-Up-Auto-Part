@@ -152,7 +152,7 @@
                 </div>
             </div>
             @else
-            <h4>Cart is Empty</h4>
+            <h4>This Cart is Empty</h4>
             @php session()->forget('subtotal') @endphp
             @endif
 

@@ -18,6 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="commentSection">
+            @include('layouts/flash-message')
                 <div class="row">
                     <div class="col-md-10 col-sm-10 col-xs-12 centerCol">
                         <div class="shopping_us">

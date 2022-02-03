@@ -10,11 +10,7 @@ use Illuminate\Http\Request;
 
 class AdminBannerController extends Controller
 {
-    function dashboard()
-    {
-        return view('admin.dashboard');
-    }
-
+  
 /**Banner functions starts*/
     function banner()
     {

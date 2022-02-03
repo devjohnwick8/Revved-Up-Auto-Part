@@ -92,7 +92,7 @@
                                                     '<div class ="col-sm-4" > ' +
                                                         '<div class="mb-4">' +
                                                             '<label class="mt-2">Price*</label>' +
-                                                            '<input type="text" class="form-control" required name="price[]"  placeholder="Enter your product Detail...">' +
+                                                            '<input type="number" class="form-control" required name="price[]"  placeholder="Enter your product Price...">' +
                                                         '</div>'+
                                                     '</div>' +
                                                     

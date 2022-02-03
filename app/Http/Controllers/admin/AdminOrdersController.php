@@ -5,12 +5,28 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\OrderItemsModel;
 use App\Models\OrderModel;
-use App\Models\ProductsModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class AdminOrdersController extends Controller
 {
+
+    function dashboard()
+    {
+        $orders = OrderModel::get();
+        $user = User::get();
+        $user_qty = count($user);
+        $order = null;
+        $order_qty = count($orders);
+        foreach($orders as $value){
+            $order =  $order += $value->order_total;
+        }
+
+        return view('admin.dashboard' , compact('order','order_qty', 'user_qty'));
+    }
+
+
     function orders_list()
     {
         $orders = OrderModel::with('get_shipping', 'get_user')->get();

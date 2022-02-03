@@ -79,6 +79,8 @@ class UIAuthController extends Controller
             $user->user_role = 2;
             $user->status = 0;
             $user->save();
+            
+            Auth::login($user);
             if (Auth::check()) {
                 return redirect(route('UI_home'));
             }
