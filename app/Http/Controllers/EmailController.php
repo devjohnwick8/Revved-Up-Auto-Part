@@ -10,7 +10,7 @@ class EmailController extends Controller
 {
     //
     public function order_place($order_number){
-        $order = OrderModel::with('get_shipping', 'user')->where('order_number', $order_number)->first();
+        $order = OrderModel::with('get_shipping', 'get_user')->where('order_number', $order_number)->first();
         if($order){
             \Mail::to($order->get_user->email)->send(new MyTestMail($order));
         }else{
