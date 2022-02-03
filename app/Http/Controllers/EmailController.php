@@ -10,9 +10,9 @@ class EmailController extends Controller
 {
     //
     public function order_place($order_number){
-        $order = OrderModel::with('get_shipping')->where('order_number', $order_number)->first();
+        $order = OrderModel::with('get_shipping', 'user')->where('order_number', $order_number)->first();
         if($order){
-            \Mail::to('auth()->user()->email')->send(new MyTestMail($order));
+            \Mail::to($order->get_user->email)->send(new MyTestMail($order));
         }else{
             return back()->with('Order Not Found');
         }
