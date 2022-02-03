@@ -253,5 +253,6 @@ class UICartController extends EmailController
 
         $this->order_place($data['order_number']);
         return redirect()->route('UI_thank_you')->with('success', 'Thank you for purchasing...');
+        
     }
 }
