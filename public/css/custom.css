@@ -2158,7 +2158,7 @@ img.benheight {
     padding: 2% 3%;
     border: 3px solid #e42525;
     background: #f5f5f5;
-    width: 60%;
+    width: 70%;
     margin-top: 20px;
 }
 .main_dabba h3 {
@@ -3933,10 +3933,6 @@ li.color-change {
     padding: 10px 0;
     }
     
-    .your_table td {
-    text-align: center;
-    }
-    
     .side_subtotal ul {
     float: right;
     }
@@ -4707,3 +4703,29 @@ section.main_track {
     object-fit: contain;
 }
 
+.main_sku h6 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 26px;
+    line-height: 29px;
+    color: #000;
+    font-weight: bold;
+    margin: 0 0 13px;
+}
+.main_sku label {
+    display: inline-block;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+}
+.main_sku select.xyz option {
+    color: #000;
+    font-weight: 500;
+}
+.order_recap table {
+    caption-side: bottom;
+    border-collapse: collapse;
+    width: 100%;
+}

@@ -104,7 +104,7 @@
                         <div> 
                             @if($product_available)
                             <br/>
-                            <h4>Available Options</h4>
+                            <h6>Available Options</h6>
                            
                             @foreach($product_available as $key =>$value)
                             <div class="row">

@@ -63,7 +63,7 @@
                                 </td>
 
                                 <td class="col-md-1 col-sm-1 col-xs-12">
-                                    <h4>${{$value->our_price + $cart[$value->id]['price']}}</h4>
+                                    <h4>${{$value->our_price}}</h4>
                                 </td>
 
                                 <td class=" col-md-1 col-sm-1 col-xs-12">

@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="review">
+                <div class="review bil_head">
                     <p>Payment Information (Credit, Debit and Gift Card)</p>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                             @foreach($products as $value)
                             <tr>
                                 <th class="recap">{{$value->title}} </th>
-                                <td>${{$value->our_price + $cart[$value->id]['price']}}</td>
+                                <td>${{$value->our_price}}</td>
                                 <td>{{$cart[$value->id]['quantity'] }}</td>
                                 <td>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price']}}</td>
                                 <!-- <th class="recap">2019 AUDI S3-2..0 liter L4-CID Radiator GAS, MAIN</th>
