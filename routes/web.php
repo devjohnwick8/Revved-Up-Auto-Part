@@ -226,7 +226,8 @@ Route::get('shipping', [UICartController::class, 'shipping'])->name('UI_shipping
 
 
 /**UI ROUTES Starts */
-Route::get('about_us', [UIController::class, 'about_us'])->name('UI_about_us');
+Route::get('about-us', [UIController::class, 'about_us'])->name('UI_about_us');
+Route::get('product-list/{id?}', [UIController::class, 'product_list'])->name('UI_product_list');
 Route::get('track', [UIController::class, 'track'])->name('UI_track');
 Route::Post('track', [UIController::class, 'track_post'])->name('UI_track_post');
 Route::get('order-track', [UIController::class, 'order_track'])->name('UI_order_track');

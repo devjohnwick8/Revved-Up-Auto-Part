@@ -117,8 +117,8 @@ echo 'active'; //class name in css
               </span>
               <div class="multi-level collapse " role="list" id="submenu-pages" aria-expanded="false">
                 <ul class="flex-column nav">
-                  <!-- <li class="nav-item {{ active('categories-list') . active('categories-add') . active('categories-edit') }}"><a class="nav-link" href="{{route('admin_categories')}}"><i class="fas fa-bars"></i><span> Categories</span></a></li>
-                  <li class="nav-item {{ active('sub-categories-list') . active('sub-categories-add') . active('sub-categories-edit') }}"><a class="nav-link" href="{{route('admin_sub_categories')}}"><i class="fas fa-bars"></i><span> Sub-Categories</span></a></li> -->
+                  <!-- <li class="nav-item {{ active('categories-list') . active('categories-add') . active('categories-edit') }}"><a class="nav-link" href="{{route('admin_categories')}}"><i class="fas fa-bars"></i><span> Categories</span></a></li> -->
+                  <li class="nav-item {{ active('sub-categories-list') . active('sub-categories-add') . active('sub-categories-edit') }}"><a class="nav-link" href="{{route('admin_sub_categories')}}"><i class="fas fa-bars"></i><span>Categories</span></a></li>
                   <li class="nav-item {{ active('products-list') . active('products-add') . active('products-edit') }}"><a class="nav-link" href="{{route('admin_products')}}"><i class="fas fa-box-open"></i><span> Products</span></a></li>
                   <li class="nav-item {{ active('product-specification-list') . active('product-specification-add') . active('product-specification-edit') }}"><a class="nav-link" href="{{route('admin_specifications')}}"><i class="fas fa-box-open"></i><span>Product Specification</span></a></li>
                     <li class="nav-item {{ active('product-vehicle-fitment-list') . active('product-vehicle-fitment-add') . active('product-vehicle-fitment-edit') }}"><a class="nav-link" href="{{route('admin_vehicle_fitments')}}"><i class="fas fa-box-open"></i><span>Product Vehicle Fitment</span></a></li>

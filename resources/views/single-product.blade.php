@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="banner_text black_bg">
-                    <h1>Radiator</h1>
+                    <h1>{{$category->title}}</h1>
                 </div>
             </div>
         </div>
@@ -24,8 +24,8 @@
                 <div class="diameter">
                     <h2>{{$single_product->title}}</h2>
                     <ul>
-                        <li><a href="javascript:void(0)">Home <i class="fas fa-chevron-right"></i></a></li>
-                        <li><a href="javascript:void(0)">Shop <i class="fas fa-chevron-right"></i> </a></li>
+                        <li><a href="{{route('UI_home')}}">Home <i class="fas fa-chevron-right"></i></a></li>
+                        <!-- <li><a href="javascript:void(0)">Shop <i class="fas fa-chevron-right"></i> </a></li> -->
                         <li><a href="javascript:void(0)">Product Details</a></li>
                     </ul>
                 </div>
@@ -45,20 +45,30 @@
                     <img  src="{{asset('uploads/products/'.$single_product->images_take1->title)}}" alt="">
                 </div>
             </div> -->
+
+
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div class="slider_products">
                     <div class="slider slider-for1">
+                    
                         @foreach($image_product as $value)
                         <div>
-                            <div class="productMainDetail"><img src="{{asset('uploads/products/'.$value->title)}}" class="img-responsive" alt=""></div>
+                            <div class="productMainDetail">
+                                <a href="{{asset('uploads/products/'.$value->title)}}" tabindex="0" data-fancybox="gallery">
+                                    <img src="{{asset('uploads/products/'.$value->title)}}" alt="" />
+                                </a>
+ 
+                            </div>
                         </div>
                         @endforeach
-            
+                        
                     </div>
                     <div class="slider slider-nav1">
                         @foreach($image_product as $value)
                         <div>
-                            <div class="productlistBox"><img src="{{asset('uploads/products/'.$value->title)}}" class="img-responsive" alt=""></div>
+                            <div class="productlistBox">
+                                <img src="{{asset('uploads/products/'.$value->title)}}" class="img-responsive" alt="">
+                        </div>
                         </div>
                         @endforeach
                  

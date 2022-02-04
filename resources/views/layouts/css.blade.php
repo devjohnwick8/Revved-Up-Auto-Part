@@ -1,4 +1,6 @@
 <!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="{{asset('css/jquery.fancybox.css')}}">
+
 <link href="{{asset('css/animate.css')}}" rel="stylesheet">
 <link href="{{asset('fontawesome5/css/all.min.css')}}" rel="stylesheet">
 <link href="{{asset('slick/slick-theme.css')}}" rel="stylesheet" type="text/css">

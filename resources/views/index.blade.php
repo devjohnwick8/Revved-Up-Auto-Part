@@ -219,7 +219,7 @@
                     <img src="{{asset('images/cat_1.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text">
                         <h3>Heat & Air Conditioning</h3>
-                        <a href="javascript:void(0)" class="btn btn_red"> Shop Now</a>
+                        <a href="{{route('UI_product_list',[5])}}" class="btn btn_red"> Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                     <img src="{{asset('images/cat_2.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text sp">
                         <h3>Hoses, Water pumps & Cooling System Parts </h3>
-                        <a href="javascript:void(0)" class="btn btn_red"> Shop Now</a>
+                        <a href="{{route('UI_product_list',[4])}}" class="btn btn_red"> Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -248,7 +248,7 @@
                     <img src="{{asset('images/cat_4.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text">
                         <h3>Fuel & Emmision Parts</h3>
-                        <a href="javascript:void(0)" class="btn btn_red"> Shop Now</a>
+                        <a href="{{route('UI_product_list',[6])}}" class="btn btn_red"> Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -274,7 +274,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="big_img">
                     <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
-                    <a href="javascript:void(0)" class="btn btn_red"> Shop Now</a>
+                    <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ use App\Models\ProductImageModel;
 use App\Models\SpecificationModel;
 use App\Models\ProductAvailableModel;
 use App\Models\ProductOptionModel;
+use App\Models\SubCategoriesModel;
 use App\Models\VehicleFitmentModel;
 use Illuminate\Http\Request;
 use Stripe\Order;
@@ -22,6 +23,7 @@ class UIController extends Controller
     {
         session()->forget('login_cart');
         $make = ProductMakeModel::orderby('id', 'ASC')->get();
+        // $make = SubCategoriesModel::orderby('id', 'ASC')->get();
 
         return view('index', compact('make'));
     }
@@ -29,6 +31,7 @@ class UIController extends Controller
     {
         $single_product = ProductsModel::with('images_take1')->where('id', $id)->first();
         $image_product = ProductImageModel::where('product_id', $id)->get();
+        $category = SubCategoriesModel::where('id', $single_product->sub_categories)->first();
         $product_available = ProductAvailableModel::where('product_id', $id)->get();
         $product_option = null;
         if($product_available){
@@ -44,7 +47,7 @@ class UIController extends Controller
         $product_specification = SpecificationModel::where('product_id', $id)->first();
         $related_product = ProductsModel::with('images_take1')->where('make', $single_product->make)->get();
 
-        return view('single-product', compact('single_product', 'related_product', 'product_specification', 'product_available', 'product_option','product_fitment', 'image_product'));
+        return view('single-product', compact('single_product', 'related_product', 'product_specification', 'product_available', 'product_option','product_fitment', 'category', 'image_product'));
     }
     public function part_not_found()
     {
@@ -102,6 +105,23 @@ class UIController extends Controller
     {
         return view('about-us');
     }
+    
+    // public function product_list()
+    // {
+    //     // $product ::ProductsModel::
+    //     return view('product-list');
+    // }
+
+    public function product_list($id)
+    {
+        $products = ProductsModel::with('images_take1')->where('sub_categories', $id)->get();
+        $category = SubCategoriesModel::where('id', $id)->first();
+        // $product ::ProductsModel::
+ 
+        return view('product-list' , compact('products', 'category'));
+    }
+    
+    
 
     public function ask_a_question()
     {

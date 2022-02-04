@@ -29,7 +29,15 @@
                             <form action="{{route('admin_products_add_edit')}}" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
                                     <div class="col-sm-6">
-
+                                    <div class="mb-4">
+                                                <label class="my-1 mr-2" for="country">Category</label>
+                                                <select class="form-select" id="parent_category" name="sub_categories">
+                                                    <option selected hidden disabled>Select Category</option>
+                                                    @foreach($sub_categories as $values)
+                                                        <option value="{{$values->id}}">{{$values->title}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         <div class="mb-4">
                                             <label for="title">Title</label>
                                             <input type="text" class="form-control" required name="title" placeholder="Enter your title...">

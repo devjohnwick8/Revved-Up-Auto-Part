@@ -4,13 +4,13 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                 <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><span class="fas fa-home"></span></a></li>
-                <li class="breadcrumb-item"><a href="{{route('admin_sub_categories')}}">Sub-Categories-List</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Sub-Categories-Edit</li>
+                <li class="breadcrumb-item"><a href="{{route('admin_sub_categories')}}">Categories-List</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Categories-Edit</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
-                <h1 class="h4">Sub-Category Edit</h1>
+                <h1 class="h4">Category Edit</h1>
             </div>
         </div>
 
@@ -32,15 +32,7 @@
                                         <label for="title">Title</label>
                                         <input type="text" class="form-control" required value="{{$sub_categories->title}}" name="title">
                                     </div>
-                                    <div class="mb-4">
-                                        <label class="my-1 mr-2" for="country">Parent Category</label>
-                                        <select class="form-select" id="parent_category" name="parent_category">
-                                            <option selected hidden disabled>Select Parent Category</option>
-                                            @foreach($parent_categories as $values)
-                                                <option value="{{$values->id}}" {{$values->id === $sub_categories->getcategories->id ? 'selected' : ''}}>{{$values->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                               
                                     <fieldset class="my-4">
                                         <legend class="h6">Status</legend>
                                         <div class="form-check">
