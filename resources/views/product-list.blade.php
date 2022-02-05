@@ -19,8 +19,9 @@
 <section class="prodcut_list">
   <div class="container">
     <div class="row">
+
+      @if($productss)
         @foreach($products as $key => $value)
-   
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class="prod-box">
               <div class="prod-img">
@@ -51,6 +52,9 @@
             </div>
           </div>
           @endforeach
+          @else
+            <h4 class="text-center">Empty Products</h4>
+          @endif
           <!-- <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class="prod-box">
               <div class="prod-img">
@@ -139,7 +143,7 @@
 
             </div>
           </div> -->
-      </div>
+    </div>
 
     </div>
 </section>

@@ -115,10 +115,11 @@ class UIController extends Controller
     public function product_list($id)
     {
         $products = ProductsModel::with('images_take1')->where('sub_categories', $id)->get();
+        $productss = ProductsModel::with('images_take1')->where('sub_categories', $id)->first();
         $category = SubCategoriesModel::where('id', $id)->first();
         // $product ::ProductsModel::
  
-        return view('product-list' , compact('products', 'category'));
+        return view('product-list' , compact('products', 'category','productss'));
     }
     
     
