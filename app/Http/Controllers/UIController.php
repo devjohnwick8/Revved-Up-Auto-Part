@@ -122,7 +122,6 @@ class UIController extends Controller
         return view('product-list' , compact('products', 'category','productss'));
     }
     
-    
 
     public function ask_a_question()
     {
