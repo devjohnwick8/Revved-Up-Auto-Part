@@ -518,7 +518,8 @@ header {
 }
 
 .social_icon {
-    float: right;
+    margin: 0 auto;
+    display: table;
 }
 
 .social_icon li select {
@@ -2158,7 +2159,7 @@ img.benheight {
     padding: 2% 3%;
     border: 3px solid #e42525;
     background: #f5f5f5;
-    width: 70%;
+    width: 55%;
     margin-top: 20px;
 }
 .main_dabba h3 {
@@ -2174,7 +2175,7 @@ img.benheight {
     color: #fff;
     background-color: #e42525;
     border-color: #e42525;
-    padding: 14px 30px;
+    padding: 14px 26px;
     text-transform: uppercase;
 }
 
@@ -4773,9 +4774,12 @@ ul.prd-ul li a:hover{}
     position: relative;
      overflow: hidden;
 }
-.prod-img img.prod-img-1{
-  width: 100%;
+.prod-img img.prod-img-1 {
+    width: 100%;
+    height: 200px;
+    object-fit: scale-down;
 }
+
 .prod-img-ovelay{
   position: absolute;
   left: 0;
@@ -4899,4 +4903,13 @@ ul.prd-ul li a:hover{}
 
 .prodcut_list {
     padding: 5% 0;
+}
+.productMainDetail img {
+    width: 100%;
+    height: 400px;
+    object-fit: scale-down;
+}
+.new_head ul li a i {
+    margin-right: 5px;
+    font-size: 13px;
 }

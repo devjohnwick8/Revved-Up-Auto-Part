@@ -54,7 +54,7 @@
                                             <td>1</td>
                                             <td>{{$value->created_at}}</td>
                                             <td>{{$value->order_number}}</td>
-                                            <td> <img class="img-list" style="widht:75px ; height:75px" 
+                                            <td> <img class="img-list" style="width:75px ; height:75px" 
                                             src="{{asset('uploads/products/'.$value->get_product->images_take1->title)}}"
                                             alt="{{$value->title}}">
                                         </td>

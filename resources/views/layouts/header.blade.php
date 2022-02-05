@@ -20,7 +20,7 @@
 
                   @if(auth()->check())
                     <li class="dropdown">
-                    <a href="javascript:void(0)">{{auth()->user()->first_name}}</a>
+                    <a href="javascript:void(0)"><i class="fas fa-user-tie"></i> {{auth()->user()->first_name}}</a>
                       <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
                       <ul class="dropdown-menu">
                         <li><a href="{{route('UI_my_profile')}}">My Profile</a></li>
@@ -30,7 +30,7 @@
                       </ul>
                     </li>
                     @else
-                        <li style="margin-top: 10px" ><a href="{{route('UI_Login')}}"><i class="far fa-user"></i> Login </a></li>
+                        <li style="margin-top: 10px" ><a href="{{route('UI_Login')}}"><i class="fas fa-lock"></i> Login </a></li>
                     @endif
                   </ul>
                 </div>  
