@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail\MyTestMail;
+use App\Mail\MyContactMail;
 use App\Models\OrderModel;
 
 class EmailController extends Controller

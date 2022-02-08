@@ -12,6 +12,7 @@ use App\Models\SpecificationModel;
 use App\Models\ProductAvailableModel;
 use App\Models\ProductOptionModel;
 use App\Models\SubCategoriesModel;
+use App\Models\ContactModel;
 use App\Models\VehicleFitmentModel;
 use Illuminate\Http\Request;
 use Stripe\Order;
