@@ -137,6 +137,19 @@ class UIController extends Controller
     {
         return view('contact-us');
     }
+    public function contact_us_post(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required | email',
+            'subject' => 'required',
+            'comment' => 'required',
+        ]);
+        $contact = ContactModel::create($validated);
+
+
+        return view('contact-us');
+    }
 
     public function customer_support()
     {
@@ -216,17 +229,18 @@ class UIController extends Controller
     }
     public function track_post(Request $request)
     {
+       
         $order = OrderModel::where('order_number', $request->order_number)->first();
         if($order){
-            return redirect()->route('UI_get_order_track' , [$order->id]);
+            return redirect()->route('UI_get_order_track' , [$order->order_number]);
         }else{ 
             return back()->with('warning', 'Order Not Found');
         }
         
     }
-    public function get_data_order_track($id)
+    public function get_data_order_track($order_number) 
     {
-        $orders = OrderModel::with('get_shipping')->where('id',$id)->first();
+        $orders = OrderModel::with('get_shipping')->where('order_number',$order_number)->first();
         $order_it = OrderItemsModel::where('order_number', $orders->order_number)->get();
         $order_items = count($order_it);
         return view('order-track' , compact('orders', 'order_items' ));

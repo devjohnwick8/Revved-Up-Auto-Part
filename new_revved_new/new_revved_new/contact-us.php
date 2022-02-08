@@ -18,11 +18,11 @@
       <div class="row">
         <div class="col-12">
           <div class="gettouch">
-            <span>Get In Touch</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            <span>Get In Touchss</span>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
               molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
               numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-              optio, eaque rerum! Provident similique accusantium nemo autem.</p>
+              optio, eaque rerum! Provident similique accusantium nemo autem.</p> -->
           </div>
         </div>
       </div>
@@ -30,22 +30,22 @@
         <div class="commentSection">
           <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <form class="row g-3">
+              <form action="{{route('UI_contact_us_post')}}" method="Post"  class="row g-3" >
                 <div class="col-md-6">
                   <label for="Name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="Name">
+                  <input type="text" class="form-control" id="Name" value="auth()->user()->first_name" name="name">
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4">
+                  <input type="email" class="form-control" id="inputEmail4" value="auth()->user()->email">
                 </div>
                 <div class="col-md-12">
                   <label for="Subject" class="form-label">Subject</label>
-                  <input type="text" class="form-control" id="Subject">
+                  <input type="text" class="form-control" id="Subject" name="subject">
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" name="comment" id="floatingTextarea2" style="height: 150px"></textarea>
                     <label for="floatingTextarea2">Comments</label>
                   </div>
                 </div>

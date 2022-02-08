@@ -29,46 +29,46 @@
       </div>
     </div>
     <div class="row">
-      <div class="commentSection">
-        <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <form class="row g-3">
-              <div class="col-md-6">
-                <label for="Name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="Name">
-              </div>
-              <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-              </div>
-              <div class="col-md-12">
-                <label for="Subject" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="Subject">
-              </div>
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
-                  <label for="floatingTextarea2">Comments</label>
+    <div class="commentSection">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <form action="{{route('UI_contact_us_post')}}" method="Post"  class="row g-3" >
+                @csrf
+                <div class="col-md-6">
+                  <label for="Name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="Name" value="{{auth()->check() ? auth()->user()->first_name : ''}}" name="name">
                 </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" name="email" value="{{auth()->check() ? auth()->user()->email : ''}}">
+                </div>
+                <div class="col-md-12">
+                  <label for="Subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="Subject" name="subject">
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" name="comment" id="floatingTextarea2" style="height: 150px"></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="ContactusBg">
+                <span>Locations</span>
+                <ul>
+                  <li><i class="fas fa-map-marker-alt"></i>Lorem ipsum dolor sit amet, </li>
+                  <li><i class="fas fa-envelope"></i> info@example.com</li>
+                  <li><i class="fas fa-phone-alt"></i> +00 123-456-789</li>
+                </ul>
               </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="ContactusBg">
-              <span>Locations</span>
-              <ul>
-                <li><i class="fas fa-map-marker-alt"></i>Lorem ipsum dolor sit amet, </li>
-                <li><i class="fas fa-envelope"></i> info@example.com</li>
-                <li><i class="fas fa-phone-alt"></i> 888-297-3077
-                </li>
-              </ul>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </section>

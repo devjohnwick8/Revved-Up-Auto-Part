@@ -231,10 +231,13 @@ Route::get('product-list/{id?}', [UIController::class, 'product_list'])->name('U
 Route::get('track', [UIController::class, 'track'])->name('UI_track');
 Route::Post('track', [UIController::class, 'track_post'])->name('UI_track_post');
 Route::get('order-track', [UIController::class, 'order_track'])->name('UI_order_track');
-Route::get('order-track/{id}', [UIController::class, 'get_data_order_track'])->name('UI_get_order_track');
+Route::get('order-track/{order_number}', [UIController::class, 'get_data_order_track'])->name('UI_get_order_track');
 Route::get('ask_a_question', [UIController::class, 'ask_a_question'])->name('UI_ask_a_question');
 Route::get('backorders', [UIController::class, 'backorders'])->name('UI_backorders');
-Route::get('contact_us', [UIController::class, 'contact_us'])->name('UI_contact_us');
+Route::get('contact-us', [UIController::class, 'contact_us'])->name('UI_contact_us');
+Route::Post('contact', [UIController::class, 'contact_us_post'])->name('UI_contact_us_post');
+
+
 Route::get('customer_support', [UIController::class, 'customer_support'])->name('UI_customer_support');
 Route::get('damage_part', [UIController::class, 'damage_part'])->name('UI_damage_part');
 Route::get('defective_claims', [UIController::class, 'defective_claims'])->name('UI_defective_claims');

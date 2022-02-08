@@ -23,4 +23,15 @@ class EmailController extends Controller
        
     }
 
+    public function contact_us($contact){
+        if($contact){
+            // \Mail::to($order->get_user['email'])->send(new MyTestMail($order));
+            \Mail::to('devjohnwict8@gmail.com')->send(new MyContactMail($contact));
+        }else{
+            return back()->with('Email Not Found');
+        }
+
+       
+    }
+
 }

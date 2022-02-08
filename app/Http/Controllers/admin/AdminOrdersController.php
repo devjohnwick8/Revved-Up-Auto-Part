@@ -37,7 +37,7 @@ class AdminOrdersController extends Controller
      {
          $orders->status = $status;
          $orders->save();
-         return back();
+         return back(); 
      }
 
      function view_order($order)
