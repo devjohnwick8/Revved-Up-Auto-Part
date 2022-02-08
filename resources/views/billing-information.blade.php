@@ -134,7 +134,7 @@
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Eveniet sed" name="coupan_code">
                     </div> -->
                     <div class="referred">
-                        <h3>were you referred to Radiatorexpress.com? Enter the email address of the referrer here to
+                        <h3>Were you referred to Radiatorexpress.com? Enter the email address of the referrer here to
                             give them FREE Ecpress points!</h3>
                         <h4>Referred by:</h4>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@mail.com" name="ref_email">

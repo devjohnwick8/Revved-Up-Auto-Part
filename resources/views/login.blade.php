@@ -90,7 +90,7 @@
                   <li>Track your order</li>
                   <li>Change you account info</li>
                 </ul>
-                <a class="btn" href="{{route('UI_Create_Account')}}"> a Member Now</a>
+                <a class="btn" href="{{route('UI_Create_Account')}}">Become a Member Now</a>
               </div>
             </div>
           </div>

@@ -4,13 +4,13 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                 <li class="breadcrumb-item"><a href="{{route('admin_dashboard')}}"><span class="fas fa-home"></span></a></li>
-                <li class="breadcrumb-item"><a href="{{route('admin_users')}}">Blog-List</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blog-Edit</li>
+                <li class="breadcrumb-item"><a href="{{route('admin_users')}}">User-List</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User-Edit</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
-                <h1 class="h4">Blog Edit</h1>
+                <h1 class="h4">User Edit</h1>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
                                 <form action="{{route('admin_users_add_edit').'/'.$user->id}}" method="POST" enctype="multipart/form-data">@csrf
                                     <div class="mb-4">
                                         <label for="title">Username</label>
-                                        <input type="text" class="form-control" required value="{{$user->username}}" name="username">
+                                        <input type="text" class="form-control" required value="{{$user->first_name}}" name="username">
                                     </div>
                                     <div class="my-4">
                                         <label for="textarea">Email</label>
@@ -42,8 +42,7 @@
                                             <option selected hidden disabled>Select Role</option>
                                             <option value="1" {{$user->user_role == 1 ? 'selected' : ''}}>Admin</option>
                                             <option value="2" {{$user->user_role == 2 ? 'selected' : ''}}>User</option>
-                                            <option value="3" {{$user->user_role == 3 ? 'selected' : ''}}>Vendor</option>
-                                            <option value="4" {{$user->user_role == 4 ? 'selected' : ''}}>Customer</option>
+                                        
                                         </select>
                                     </div>
                                     <fieldset class="my-4">

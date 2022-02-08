@@ -21,12 +21,13 @@ class UIAuthController extends Controller
         }else{
         session()->put('my_url' , $my_path);    
         $cart = session()->get('cart');
-        return view('login', compact('cart')  );
+        return view('login', compact('cart'));
               
         }
     }
     public function login_data(Request $request)
     {
+       
         // dd($request);
         if (!empty($request->email) && !empty($request->password)) {
             $userfind = User::where('email', $request->email)->where('user_role', 2)->first();
@@ -52,6 +53,7 @@ class UIAuthController extends Controller
         } else {
             return redirect(route('UI_Login'))->with('Failed_Empty', 'Please fill required fields');
         }
+      
     }
     public function create_account()
     {
@@ -59,6 +61,10 @@ class UIAuthController extends Controller
     }
     public function create_account_data(User $user, Request $request)
     {
+        $validated = $request->validate([
+            'email' => 'required|unique:users',
+            'password' => 'required',
+        ]);
         if ($request->password == $request->password2) {
             $create = 1;
             (isset($user->id) and $user->id > 0) ? $create = 0 : $create = 1;
@@ -77,7 +83,7 @@ class UIAuthController extends Controller
                 $user->password = Hash::make($request->password);
             }
             $user->user_role = 2;
-            $user->status = 0;
+            $user->status = 1;
             $user->save();
             
             Auth::login($user);
@@ -90,7 +96,7 @@ class UIAuthController extends Controller
                 return back()->with('success', 'Account Created Successfully');
             }
         } else {
-            return back()->with('update', 'Password does not match');
+            return back()->with('error', 'Password does not match');
         }
     }
     public function user_logout()

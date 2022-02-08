@@ -48,7 +48,7 @@ class AdminAuthController extends Controller
         return view('admin.profile',compact('profile'));
     }
     public function admin_profile_update(User $user, Request $request){
-        $user->username = $request->username;
+        $user->first_name = $request->username;
         $user->email = $request->email;
         $user->save();
         return back()->with('update','Updated Successfully');
@@ -87,7 +87,7 @@ class AdminAuthController extends Controller
     {
         $create = 1;
         (isset($user->id) and $user->id>0)?$create=0:$create=1;
-        $user->username = $request->username;
+        $user->first_name = $request->username;
         $user->email = $request->email;
         if($request->password){
             $user->password = Hash::make($request->password);

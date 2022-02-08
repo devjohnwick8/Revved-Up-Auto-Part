@@ -113,14 +113,11 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <div class="bil_state">
-                                    <input class="form-control" list="datalistOptions" id="exampleDataList" name="ship_state" value="{{auth()->user()->state}}">
-
-
+                                <div class="ship">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="ship_state" value="{{auth()->user()->state}}">
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="shipping_filed">
@@ -144,7 +141,7 @@
                                 <div class="ship">
                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" value="{{auth()->user()->phone}}">
                                 </div>
-                                <p>Valid phone format should be (xxx),xxx,xxxx</p>
+                                <!-- <p>Valid phone format should be (xxx),xxx,xxxx</p> -->
                             </div>
                         </div>
 

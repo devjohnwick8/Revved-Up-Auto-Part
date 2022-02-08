@@ -29,7 +29,7 @@ class AdminOrdersController extends Controller
 
     function orders_list()
     {
-        $orders = OrderModel::with('get_shipping', 'get_user')->get();
+        $orders = OrderModel::with('get_shipping', 'get_user')->orderBy('id', 'DESC')->get();
         return view('admin.orders.orders-list', compact('orders'));
     }
 
