@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 use Stripe\Order;
 use Stripe\OrderItemModel;
 
-class UIController extends Controller
+class UIController extends EmailController
 {
     public function home()
     {
@@ -147,10 +147,10 @@ class UIController extends Controller
             'comment' => 'required',
         ]);
         $contact = ContactModel::create($validated);
-        $this->contact_us($contact);
+        $this->contact_us_email($contact);
 
 
-        return bac()->with('success', 'Form Submited');
+        return back()->with('success', 'Form Submited');
     }
 
     public function customer_support()
