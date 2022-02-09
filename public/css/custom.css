@@ -2416,6 +2416,9 @@ section.warranty {
 }
 
 @media (max-width: 768px) {
+    .social_icon ul li a img {
+        width: 27px;
+    }
     .main_slider img {
         height: 700px;
         object-fit: cover;
@@ -2439,9 +2442,9 @@ section.warranty {
     }
 
     .banner_text h1 {
-        font-size: 40px;
+        font-size: 36px;
         line-height: 60px;
-        padding: 10px 60px;
+        padding: 10px 0;
     }
 
     .speed_div small {
@@ -2594,18 +2597,23 @@ section.warranty {
 
     .logo img {
         width: 30%;
-        bottom: 40px;
-        margin: 0 auto;
+        bottom: 100px;
+        margin: 40px auto;
         display: block;
-        left: 0;
-        right: 0;
+        left: -10px;
+        right: 60px;
+    }
+    .new_head {
+        float: left !important;
+        padding-top: 30px !important;
     }
 
     .social_icon {
-        margin: 10px auto;
+        margin: 0px auto;
         display: block;
         text-align: center;
-        float: none;
+        float: right;
+        padding: 0;
     }
 
     .main_slider img {
@@ -2820,6 +2828,17 @@ section.warranty {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 425px) {
     .main_slider img {
         height: 940px;
@@ -2944,19 +2963,20 @@ section.warranty {
     }
 
     .logo img {
-        width: 40%;
-        bottom: 30px;
+        width: 26%;
+        bottom: 70px;
         margin: 0 auto;
         display: block;
-        left: 0;
+        left: -16px;
         right: 0;
     }
 
     .social_icon {
-        margin: 10px auto;
+        margin: 0px auto;
         display: block;
         text-align: center;
-        float: none;
+        float: right;
+        padding: 0;
     }
 
     .main_slider img {
@@ -3023,18 +3043,19 @@ section.warranty {
 
 @media (max-width: 360px) {
     .social_icon {
-        margin: 10px auto;
+        margin: 0px auto;
         display: block;
         text-align: center;
-        float: none;
+        float: right;
+        padding: 0;
     }
 
     .logo img {
-        width: 40%;
-        bottom: 30px;
+        width: 26%;
+        bottom: 70px;
         margin: 0 auto;
         display: block;
-        left: 0;
+        left: -16px;
         right: 0;
     }
 
@@ -3250,6 +3271,61 @@ section.warranty {
         padding: 20px 8px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* cart Sec Css start */
 .main_card {

@@ -37,16 +37,7 @@
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="social_icon">
-                  <ul>
-                    <li>
-                      <!-- <select>
-                        <option selected>English</option>
-                        <option value="2">German</option>
-                        <option value="3">French</option>
-                        <option value="3">Arabic</option>
-                      </select> -->
-                    </li>
-                    
+                  <ul>                   
                     <li><a href="javascript:void(0)"><img src="{{asset('images/f.png')}}" class="img-fluid" alt=""></a></li>
                     <li><a href="javascript:void(0)"><img src="{{asset('images/p.png')}}" class="img-fluid" alt=""></a></li>
                     <li><a href="javascript:void(0)"><img src="{{asset('images/i.png')}}" class="img-fluid" alt=""></a></li>
