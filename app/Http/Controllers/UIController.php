@@ -147,9 +147,10 @@ class UIController extends Controller
             'comment' => 'required',
         ]);
         $contact = ContactModel::create($validated);
+        $this->contact_us($contact);
 
 
-        return view('contact-us');
+        return bac()->with('success', 'Form Submited');
     }
 
     public function customer_support()
