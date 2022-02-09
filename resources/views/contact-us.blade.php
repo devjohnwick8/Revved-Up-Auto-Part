@@ -17,6 +17,7 @@
 <!-- BEGIN Contact Us -->
 <section id="testimonials">
   <div class="container">
+  @include('layouts/flash-message')
     <div class="row">
       <div class="col-12">
         <div class="gettouch">
