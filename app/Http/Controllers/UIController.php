@@ -13,6 +13,7 @@ use App\Models\ProductAvailableModel;
 use App\Models\ProductOptionModel;
 use App\Models\SubCategoriesModel;
 use App\Models\ContactModel;
+use App\Models\ReturnModel;
 use App\Models\VehicleFitmentModel;
 use Illuminate\Http\Request;
 use Stripe\Order;
@@ -213,6 +214,31 @@ class UIController extends EmailController
         return view('submit_returns');
     }
 
+    public function submit_returns_post(Request $request)
+    {
+        $validated = $request->validate([
+            'claim' => 'required',
+            'order_number' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required | email',
+            'phone' => 'required',
+            'discription' => 'required',
+        ]);
+        $order = OrderModel::where('order_number', $validated['order_number'])->first();
+        if($order){
+            ReturnModel::create($validated);
+           return back()->with('success', 'Form Submitted Successfully');
+        }
+        else{
+            return back()->with('warning', 'Order Number Not Found');
+        }
+       
+    }
+    
+
+    
+
     public function warranty_policy()
     {
         return view('warranty_policy');
@@ -231,7 +257,6 @@ class UIController extends EmailController
     }
     public function track_post(Request $request)
     {
-       
         $order = OrderModel::where('order_number', $request->order_number)->first();
         if($order){
             return redirect()->route('UI_get_order_track' , [$order->order_number]);

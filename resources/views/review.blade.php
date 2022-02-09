@@ -1,6 +1,39 @@
 @extends('layouts.main')
 @section('content')
+<!--loader-->
+<style>
+        #test {
+            position: fixed;
 
+            left: 0;
+
+            top: 0;
+
+            z-index: 9999999;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: visible;
+
+            background: rgb(255 255 255 / 65%) url("{{asset('images/1493.gif')}}") no-repeat center center;
+
+            color: #000;
+
+
+        }
+    </style>
+
+    <div class="preloader d-none" id="test" ></div>
+    @push('js')
+        <script>
+            function myFunction() {
+                $('.preloader').removeClass('d-none').addClass('d-block');
+            }
+        </script>
+    @endpush
+    <!--loader-->
 <!--  -->
 <section class="inner_banner">
     <div class="container">
@@ -173,7 +206,7 @@
                                             .removeClass('d-none')
                                             .find('.alert')
                                             .text(response.error.message);
-                                        $('#test').removeClass('block').addClass('d-none');
+                                        $('.preloader').removeClass('block').addClass('d-none');
                                     } else {
                                         // token contains id, last4, and card type
                                         var token = response['id'];

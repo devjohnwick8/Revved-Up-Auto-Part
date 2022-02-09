@@ -282,6 +282,7 @@ Route::get('restocking', [UIController::class, 'restocking'])->name('UI_restocki
 Route::get('return_process', [UIController::class, 'return_process'])->name('UI_return_process');
 Route::get('shipping_policy', [UIController::class, 'shipping_policy'])->name('UI_shipping_policy');
 Route::get('submit_returns', [UIController::class, 'submit_returns'])->name('UI_submit_returns');
+Route::post('submited-returns', [UIController::class, 'submit_returns_post'])->name('UI_submit_returns_post');
 Route::get('warranty_policy', [UIController::class, 'warranty_policy'])->name('UI_warranty_policy');
 
 /**UI ROUTES */
