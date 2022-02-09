@@ -29,7 +29,6 @@ class MyContactMail extends Mailable
      */
     public function build()
     {
-        dd($this->details['subject']);
         // return $this->view('view.name');
         return $this->subject($this->details['subject'])
                     ->view('emails.myContactMail');
