@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\AdminBannerController;
 use App\Http\Controllers\admin\AdminVehicleFitmentController;
 use App\Http\Controllers\admin\AdminSpecificationController;
 use App\Http\Controllers\admin\AdminBlogsController;
+use App\Http\Controllers\admin\AdminReturnsController;
 use App\Http\Controllers\admin\AdminTestimonialsController;
 use App\Http\Controllers\admin\AdminServicesController;
 use App\Http\Controllers\admin\AdminProductDetailsController;
@@ -73,6 +74,12 @@ Route::group(['middleware' => ['protectedPage']], function () {
     Route::get('/admin/blog-delete/{blog?}', [AdminBlogsController::class, 'blog_delete'])->name('admin_blogs_delete');
     Route::post('/admin/blog-add-edit/{blog?}', [AdminBlogsController::class, 'blog_add_edit_data'])->name('admin_blogs_add_edit');
 
+      /**Returns Routes */
+      Route::get('/admin/returns-list', [AdminReturnsController::class, 'return_list'])->name('admin_returns');
+     
+  
+      
+    
     /**Testimonials Routes */
     Route::get('/admin/testimonial-list', [AdminTestimonialsController::class, 'testimonial_list'])->name('admin_testimonials');
     Route::get('/admin/testimonial-add', [AdminTestimonialsController::class, 'testimonial_add'])->name('admin_testimonials_add');
