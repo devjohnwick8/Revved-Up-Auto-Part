@@ -147,6 +147,7 @@ class UIController extends EmailController
             'comment' => 'required',
         ]);
         $contact = ContactModel::create($validated);
+        dd($contact);
         $this->contact_us_email($contact);
 
 
