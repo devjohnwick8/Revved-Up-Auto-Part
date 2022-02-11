@@ -75,7 +75,7 @@
                                             class="fas fa-edit"></i>View Order</a></strong>
                                 </td>
                             </tr>
-                            @endforeach
+               
                         </tbody>
                     </table>
                 </div>
