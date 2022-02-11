@@ -165,9 +165,6 @@ class UICartController extends EmailController
     public function my_orders()
     {
       
-            $order = OrderModel::with('get_shipping' , 'get_user')->where('order_number', $order_number)->first();
-            return  view('my-orders' , compact('order'));
-       
             $order = OrderModel::with('get_shipping' , 'get_user')->where('user_id', Auth()->user()->id)->get();
             return  view('my-orders' , compact('order'));
   
@@ -175,7 +172,7 @@ class UICartController extends EmailController
     public function my_orders_email($order_number)
     {
             $order = OrderModel::with('get_shipping' , 'get_user')->where('order_number', $order_number)->first();
-            return  view('my-orders' , compact('order'));
+            return  view('my-order' , compact('order'));
   
     }
 
