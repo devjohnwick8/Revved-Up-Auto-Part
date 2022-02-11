@@ -50,8 +50,8 @@
                                 <td class="border-0 font-weight-bold"><strong>1</strong></td>
                                 <td class="border-0 font-weight-bold"><strong>{{$order->created_at}}</strong></td>
                                 <td class="border-0 font-weight-bold"><strong>{{$order->order_number}}</strong></td>
-                                <td class="border-0 font-weight-bold"><strong>{{$order->get_user ? $value->get_user->first_name : ''}}</strong></td>
-                                <td class="border-0 font-weight-bold"><strong>{{$order->get_shipping ? $value->get_shipping->shipping_address : ''}}</strong></td>
+                                <td class="border-0 font-weight-bold"><strong>{{$order->get_user ? $order->get_user->first_name : ''}}</strong></td>
+                                <td class="border-0 font-weight-bold"><strong>{{$order->get_shipping ? $order->get_shipping->shipping_address : ''}}</strong></td>
                                 <td class="border-0 font-weight-bold"><strong>{{$order->order_total}}</strong></td>
                                 <td class="border-0 font-weight-bold"><strong>
                                 @if($order->status === 0)
