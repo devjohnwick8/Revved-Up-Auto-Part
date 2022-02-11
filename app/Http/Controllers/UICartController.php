@@ -162,11 +162,20 @@ class UICartController extends EmailController
         }
         return response()->json(['cart_data' => $cart, 'comment' => $comment, 'cart_length' => count(session()->get('cart', $cart)), 'status' => 1]);
     }
-    public function my_orders()
+    public function my_orders($order_number)
     {
-        $order = OrderModel::with('get_shipping' , 'get_user')->where('user_id', Auth()->user()->id)->get();
-        return  view('my-orders' , compact('order'));
+        if($order_number){
+            $order = OrderModel::with('get_shipping' , 'get_user')->where('user_id', Auth()->user()->id)->get();
+            return  view('my-orders' , compact('order'));
+        }else{
+            $order = OrderModel::with('get_shipping' , 'get_user')->where('order_number', $order_number)->first();
+            return  view('my-orders' , compact('order'));
+        
+        }
     }
+
+    
+
     public function my_order_items($order)
     {
         $orders = OrderModel::with('get_shipping', 'get_user')->where('id', $order)->first();

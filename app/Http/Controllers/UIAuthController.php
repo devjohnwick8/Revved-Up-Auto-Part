@@ -16,8 +16,8 @@ class UIAuthController extends Controller
     public function login()
     {
         $my_path = session()->get('_previous')['url'];
-        if (Auth::check()) {
-        return route('UI_home');
+        if (auth()->check()) {
+        return redirect()->route('UI_home');
         }else{
         session()->put('my_url' , $my_path);    
         $cart = session()->get('cart');
@@ -27,8 +27,6 @@ class UIAuthController extends Controller
     }
     public function login_data(Request $request)
     {
-       
-        // dd($request);
         if (!empty($request->email) && !empty($request->password)) {
             $userfind = User::where('email', $request->email)->where('user_role', 2)->first();
             if ($userfind) {
@@ -37,8 +35,11 @@ class UIAuthController extends Controller
                     /*matched password*/
                     Auth::login($userfind);
                     if (Auth::check()) {
+                        // dd()
                     $url = (session()->get('my_url'));
                       return Redirect::away($url);
+                    //   return header("Location: $url");
+                      
                     } else {
                         return redirect(route('UI_Login'));
                     }

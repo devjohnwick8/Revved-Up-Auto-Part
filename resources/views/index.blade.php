@@ -230,6 +230,7 @@
                         <h3>Hoses, Water pumps & Cooling System Parts </h3>
                         <a href="{{route('UI_product_list',[7])}}" class="btn btn_red"> Shop Now</a>
                     </div>
+                    
                 </div>
             </div>
         </div>
