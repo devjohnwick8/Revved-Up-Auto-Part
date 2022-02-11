@@ -278,7 +278,7 @@ Route::post('/payment', [UICartController::class, 'event_stripe'])->name('stripe
 
 Route::get('my_orders/', [UICartController::class, 'my_orders'])->name('UI_my_orders')->middleware('auth');
 Route::get('my_orders/{order_number}', [UICartController::class, 'my_orders_email'])->name('UI_my_orders_email');
-Route::get('/my-order-items/{order}', [UICartController::class, 'my_order_items'])->name('UI_my_order_items')->middleware('auth');
+Route::get('/my-order-items/{order}', [UICartController::class, 'my_order_items'])->name('UI_my_order_items');
 /**UI Cart Routes ends*/
 
 
