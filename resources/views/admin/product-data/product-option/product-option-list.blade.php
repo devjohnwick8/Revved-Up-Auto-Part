@@ -33,7 +33,6 @@
                         <th class="border-0">Available</th>
                          <th class="border-0">Title</th>
                          <th class="border-0">Price</th>
-               
                         <th class="border-0">Action</th>
                     </tr>
                 </thead>

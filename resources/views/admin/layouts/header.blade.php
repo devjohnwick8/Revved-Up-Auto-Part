@@ -124,6 +124,7 @@ echo 'active'; //class name in css
                     <li class="nav-item {{ active('product-vehicle-fitment-list') . active('product-vehicle-fitment-add') . active('product-vehicle-fitment-edit') }}"><a class="nav-link" href="{{route('admin_vehicle_fitments')}}"><i class="fas fa-box-open"></i><span>Product Vehicle Fitment</span></a></li>
                     <li class="nav-item {{ activedata('product-available-list') . activedata('product-available-add') . activedata('product-available-edit') }}"><a class="nav-link" href="{{route('admin_product_available_list')}}"><i class="fas fa-box-open"></i><span>Product Available</span></a></li>
                     <li class="nav-item {{ activedata('product-option-list') . activedata('product-option-add') . activedata('product-option-edit') }}"><a class="nav-link" href="{{route('admin_product_option_list')}}"><i class="fas fa-box-open"></i><span>Product Option</span></a></li> 
+                    <li class="nav-item {{ activedata('admin_returns') . activedata('admin_returns') . activedata('admin_returnst') }}"><a class="nav-link" href="{{route('admin_returns')}}"><i class="fas fa-box-open"></i><span>Product Return</span></a></li> 
                 </ul>
               </div>
             </li>
