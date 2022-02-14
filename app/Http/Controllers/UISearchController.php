@@ -10,6 +10,7 @@ class UISearchController extends Controller
 {
     public function search_year(Request $request)
     {
+        
         $make = ProductsModel::with('get_product_year')->where('make', $request->reqdata)->get();
         if ($make !== null) {
             $test = array();

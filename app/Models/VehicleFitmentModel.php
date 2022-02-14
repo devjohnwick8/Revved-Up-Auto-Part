@@ -12,6 +12,6 @@ class VehicleFitmentModel extends Model
 
     public function get_product()
     {
-        return $this->hasOne(ProductsModel::class, 'id', 'product_fitment');
+        return $this->belongsTo(ProductsModel::class, 'product_id', 'id');
     }
 }

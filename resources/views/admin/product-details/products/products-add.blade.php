@@ -118,7 +118,7 @@
                                         <div class="row">
                                             <div class=" col-sm-6 mb-4">
                                                 <label for="title">SKU</label>
-                                                <input type="number" class="form-control" required name="sku" placeholder="Enter your sku...">
+                                                <input type="text" class="form-control" required name="sku" placeholder="Enter your sku...">
                                             </div>
                                             <div class=" col-sm-6 mb-4">
                                                 <label for="title">OEM</label>

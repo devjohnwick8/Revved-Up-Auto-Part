@@ -41,8 +41,8 @@
                         @foreach($vehicle_fitment as $key=>$value)
                             <tr>
                         
-                                <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
-                                <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$value->get_product ? $value->get_product->title : ''}}</a> </td>
+                                <td class="border-0">{{$key+1}}</td>
+                                <td class="border-0">{{$value->get_product ? $value->get_product->title : ''}}</td>
                                 <td class="border-0">
                                     <img class="img-list" src="{{asset('uploads/vehicle-fitments/'.$value->title)}}"
                                      alt="{{$value->title}}">

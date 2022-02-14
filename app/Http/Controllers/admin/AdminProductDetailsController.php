@@ -140,16 +140,22 @@ class AdminProductDetailsController extends Controller
     }
     function products_add_edit_data(ProductsModel $products , Request $request)
     {
+        $validated = $request->validate([
+            "title" => "required|max:255",
+            "sku" => "required|max:255",
+
+        ]);
+  
         $create = 1;
         (isset($products->id) and $products->id>0)?$create=0:$create=1;
         $products->sub_categories = $request->sub_categories;
-        $products->title = $request->title;
+        $products->title = $validated['title'];
         $products->description = $request->description;
         $products->retail_price = $request->retail_price;
         $products->our_price = $request->our_price;
         $products->brand = $request->brand;
         $products->stock = $request->stock;
-        $products->sku = $request->sku;
+        $products->sku = $validated['sku'];
         $products->oem = $request->oem;
         $products->make = $request->make;
         $products->year = $request->year;
@@ -160,7 +166,9 @@ class AdminProductDetailsController extends Controller
         $products->rare = $request->rare;
         $products->status = $request->status;
         $products->save();
+
             /***saving multiple image file */
+        
             if($request->hasFile('images'))
             {
                 /***for deleting old images*/
@@ -168,10 +176,11 @@ class AdminProductDetailsController extends Controller
                     foreach($getimage as $imageget){
                         $imageget->delete();
                     }
+                //    dd($request->images);
                 /***for uploading new images*/
-                foreach ($request->images as $image)
+                foreach ($request->images as $key=> $image)
                 {
-                    $imageName = time().'.'.$image->getClientOriginalExtension();
+                    $imageName = time().$key.'.'.$image->getClientOriginalExtension();
                     $image->move(public_path('/uploads/products'), $imageName);
                     /** Store a new images for products */
                     $storeImage = new ProductImageModel();

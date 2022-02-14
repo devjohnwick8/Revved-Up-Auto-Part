@@ -124,7 +124,7 @@
                                         <div class="row">
                                             <div class=" col-sm-6 mb-4">
                                                 <label for="title">SKU</label>
-                                                <input type="number" class="form-control" required name="sku" placeholder="Enter your sku..." value="{{$products->sku}}">
+                                                <input type="text" class="form-control" required name="sku" placeholder="Enter your sku..." value="{{$products->sku}}">
                                             </div>
                                             <div class=" col-sm-6 mb-4">
                                                 <label for="title">OEM</label>
@@ -137,7 +137,7 @@
                                                 <select id="year" name="make" class="form-control">
                                                     <option selected hidden disabled>Please select make</option>
                                                     @foreach($product_make as $value)
-                                                    <option value="{{$value->id}}" {{$products->make === $values->id ? 'selected' : ''}}>{{$value->title}}</option>
+                                                    <option value="{{$value->id}}" {{$products->make === $value->id ? 'selected' : ''}}>{{$value->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

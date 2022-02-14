@@ -12,6 +12,6 @@ class SpecificationModel extends Model
 
     public function get_product()
     {
-        return $this->hasOne(ProductsModel::class, 'id', 'product_specific');
+        return $this->belongsTo(ProductsModel::class, 'product_id', 'id');
     }
 }

@@ -15,7 +15,7 @@ class AdminSpecificationController extends Controller
 /**vehicle_fitment functions starts*/
     function specification()
     {
-        $specification = SpecificationModel::get();
+        $specification = SpecificationModel::with('get_product')->get();
         return view('admin.specifications.specification-list',compact('specification'));
     }
     function specification_add()
