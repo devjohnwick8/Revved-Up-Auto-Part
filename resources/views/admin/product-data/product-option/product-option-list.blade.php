@@ -29,10 +29,11 @@
                 <thead class="thead-light">
                     <tr>
                         <th class="border-0">#</th>
+                        <th class="border-0">Product Title</th>
                         <th class="border-0">Available</th>
                          <th class="border-0">Title</th>
                          <th class="border-0">Price</th>
-                        <!-- <th class="border-0">Details</th> -->
+               
                         <th class="border-0">Action</th>
                     </tr>
                 </thead>
@@ -41,7 +42,8 @@
                     <!-- Start of Item -->
                     @foreach($products_option as $key=>$value)
                     <tr>
-                        <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
+                        <td class="border-0">{{$key+1}} </td>
+                        <td class="border-0 font-weight-bold">{{$value->get_available->get_product->title}}</td>
                         <td class="border-0 font-weight-bold">{{$value->get_available->heading}}</td>
                         <td class="border-0 font-weight-bold">{{$value->title}}</td>
                         <td class="border-0 font-weight-bold">{{$value->price}}</td>

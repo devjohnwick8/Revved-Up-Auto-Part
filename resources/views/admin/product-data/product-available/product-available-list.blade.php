@@ -12,7 +12,7 @@
             <h1 class="h4">Product-Available</h1>
         </div>
         <div>
-            <a href="{{route('admin_product_available_add')}}" class="btn btn-outline-gray"><i class="far fa-plus-square mr-1"></i> Add New Product Core Row</a>
+            <a href="{{route('admin_product_available_add')}}" class="btn btn-outline-gray"><i class="far fa-plus-square mr-1"></i> Add New Product Available</a>
         </div>
     </div>
 </div>

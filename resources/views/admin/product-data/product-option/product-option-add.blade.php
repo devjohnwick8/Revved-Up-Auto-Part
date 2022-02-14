@@ -51,7 +51,8 @@
                                         <select id="year" name="available_id" data-id="1" class="form-control">
 
                                             @foreach($product as $value)
-                                            <option value="{{$value->id}}">{{$value->heading}}</option>
+                                            
+                                            <option value="{{$value->id}}">{{$value->heading}} - {{$value->get_product->title}}</option>
                                             @endforeach
                                         </select>
                                     </div>
