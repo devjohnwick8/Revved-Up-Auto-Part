@@ -20,7 +20,7 @@ class AdminSpecificationController extends Controller
     }
     function specification_add()
     {  
-        $product = ProductsModel::get();
+        $product = ProductsModel::orderBy('id', 'Desc')->get();
         return view('admin.specifications.specification-add', compact('product') );
     }
     function specification_edit($id)
