@@ -200,7 +200,7 @@ class AdminProductDataController extends Controller
     }
     function product_option_add()
     {
-        $product = ProductAvailableModel::with('get_product')->get();
+        $product = ProductAvailableModel::with('get_product')->orderBy('id','Desc')->get();
 
         return view('admin.product-data.product-option.product-option-add', compact('product'));
     }
