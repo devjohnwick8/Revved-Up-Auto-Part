@@ -30,14 +30,7 @@
                                                 <h3>Auto Parts Quick Search</h3>
                                             </div>
                                             <div class="inner_form">
-                                                <form method="POST" action="{{route('UI_search_part')}}">@csrf
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <div class="form-group">
-                                                            <input type="text" placeholder="Search by Part#" name="part" required>
-                                                            <button type="submit"><img src="images/search.png" alt=""></button>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                              
                                                 <form action="{{route('UI_shopnow')}}" method="POST">@csrf
                                                     <div class="row">
                                                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -82,6 +75,8 @@
                                                         </div>
                                                     </div>
                                                 </form>
+
+                                               
                                                 <input type="hidden" value="0" id="make_demo" />
                                                 <input type="hidden" value="0" id="year_demo" />
                                                 <input type="hidden" value="0" id="model_demo" />
@@ -185,8 +180,16 @@
                                                     }
                                                 </script>
                                                 @endpush
-
-
+                                                        <h4 class="or">  OR </h4>
+                                                    
+                                                        <form method="POST" action="{{route('UI_search_part')}}">@csrf
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group">
+                                                            <input type="text" placeholder="Search by Part#" name="part" required>
+                                                            <button type="submit"><img src="images/search.png" alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                </form>
 
                                             </div>
                                         </div>
@@ -204,6 +207,18 @@
 
 @include('layouts.top_pickup')
 
+<section class="big_imgsec">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="big_img">
+                    <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
+                    <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- categorie_sec start  -->
 <section class="categorie_sec">
     <div class="container">
@@ -270,18 +285,7 @@
     </div>
 </section>
 <!-- radiator sec start  -->
-<section class="big_imgsec">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="big_img">
-                    <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
-                    <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 @include('layouts.review-slider')
 @endsection

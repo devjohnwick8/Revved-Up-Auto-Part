@@ -21,7 +21,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="diameter">
                     <h2>PART NOT FOUND</h2>
-                    <p>This part has not yet been added to our database. However, please Call OR Text us toll free at <a href="tel: 888-297-3077">888-297-3077,</a>
+                    <p>This part has not yet been added to our database. However, please Call or Text us toll free at <a href="tel: 888-297-3077">888-297-3077,</a>
                         or use the form below to send your inquiry for this part.</p>
 
                 </div>

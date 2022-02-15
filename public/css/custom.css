@@ -4990,3 +4990,18 @@ ul.prd-ul li a:hover{}
     margin-right: 5px;
     font-size: 13px;
 }
+
+/* OR text */
+.inner_form h4.or {
+    /* color: #ef0202; */
+    font-family: "Rajdhani", sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    color: #e42525;
+    font-weight: bold;
+    margin: 0 0 13px;
+    text-align: center;
+    border-top: 1px solid #e42525;
+    border-bottom: 1px solid #e42525;
+    padding: 10px 0;
+}
