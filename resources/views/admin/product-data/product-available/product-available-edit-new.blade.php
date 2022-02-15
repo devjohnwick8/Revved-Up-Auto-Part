@@ -20,9 +20,11 @@
                     <div class="row mb-4">
                         <div class="col-lg-12 col-sm-12">
                             <!-- Form -->
-                            @if(Session::has('success'))
-                            <div class="alert alert-success mb-4" id="success-alert">
-                                <center><span class="text-white">{{Session::get('success')}}</span></center>
+                          
+
+                            @if(Session::has('update'))
+                            <div class="alert alert-warning mb-4" id="success-alert">
+                                <center><span class="text-white">{{Session::get('update')}}</span></center>
                             </div>
                             @endif
                             <form action="{{route('admin_product_available_add_edit_data',[$product_avail->id])}}" method="POST" >
