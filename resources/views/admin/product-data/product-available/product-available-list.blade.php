@@ -43,9 +43,9 @@
                         <td class="border-0 font-weight-bold">{{$value->heading}}</td>
                         <td class="border-0 font-weight-bold">{{$value->get_product->title}}</td>
                         <td class="border-0">
-                            <a href="{{route('admin_product_available_edit_new',[$value->get_product->id])}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
+                            <a href="{{route('admin_product_available_edit_new',[$value->id])}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>Edit</a>
                             <span class="text-primary"> | </span>
-                            <a href="{{route('admin_product_available_delete',[$value->get_product->id])}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
+                            <a href="{{route('admin_product_available_delete',[$value->id])}}" class="text-danger ml-3"><i class="far fa-trash-alt"></i>Delete</a>
                         </td>
                     </tr>
                     @endforeach

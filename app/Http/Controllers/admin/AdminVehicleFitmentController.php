@@ -25,7 +25,7 @@ class AdminVehicleFitmentController extends Controller
     }
     function vehicle_fitment_add()
     {  
-        $product = ProductsModel::get();
+        $product = ProductsModel::orderBy('id', 'Desc')->get();
         return view('admin.vehicle-fitments.vehicle-fitment-add', compact('product') );
     }
     function vehicle_fitment_edit($id)

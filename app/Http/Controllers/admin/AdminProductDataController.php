@@ -161,8 +161,8 @@ class AdminProductDataController extends Controller
     {
         $product = ProductsModel::get();
     
-        $product_avail = ProductAvailableModel::with('get_product')->where('product_id',$id)->first();
-       
+        $product_avail = ProductAvailableModel::with('get_product')->where('id',$id)->first();
+   
 
         return view('admin.product-data.product-available.product-available-edit-new', compact('product','product_avail'));
     }
@@ -174,11 +174,8 @@ class AdminProductDataController extends Controller
     }
     function product_available_add_edit_data(ProductAvailableModel $product_available, Request $request)
     {
-        
-       
         $create = 1;
         (isset($product_available->id) and $product_available->id > 0) ? $create = 0 : $create = 1;
-                $product_available = new ProductAvailableModel();
                 $product_available->heading = $request->heading;
                 $product_available->product_id = $request->product_id;
                 $product_available->save();
@@ -213,6 +210,7 @@ class AdminProductDataController extends Controller
     
     function product_option_add_edit_data(ProductOptionModel $product_option, Request $request)
     {
+      
         $create = 1;
         (isset($product_option->id) and $product_option->id > 0) ? $create = 0 : $create = 1;
         foreach($request->title as $key=>$value)
