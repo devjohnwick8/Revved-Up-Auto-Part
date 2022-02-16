@@ -232,18 +232,18 @@
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="cat_main">
-                    <img src="{{asset('images/cat_1.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset('images/fan_relay_kits.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text">
-                        <h3>Heat & Air Conditioning</h3>
+                        <h3>Fan Relay kits</h3>
                         <a href="{{route('UI_product_list',[5])}}" class="btn btn_red"> Shop Now</a>
                     </div>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <div class="cat_main">
-                    <img src="{{asset('images/cat_2.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset('images/electric_fans.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text sp">
-                        <h3>Hoses, Water pumps & Cooling System Parts </h3>
+                        <h3>Electric Fans</h3>
                         <a href="{{route('UI_product_list',[7])}}" class="btn btn_red"> Shop Now</a>
                     </div>
                     
@@ -264,7 +264,7 @@
                 <div class="cat_main big text-center">
                     <img src="{{asset('images/cat_4.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text">
-                        <h3>Fuel & Emmision Parts</h3>
+                        <h3>Overflow Tanks and External Transmission Cooler</h3>
                         <a href="{{route('UI_product_list',[6])}}" class="btn btn_red"> Shop Now</a>
                     </div>
                 </div>
