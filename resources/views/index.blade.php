@@ -262,7 +262,7 @@
             <!--</div>-->
             <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
                 <div class="cat_main big text-center">
-                    <img src="{{asset('images/cat_4.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset('images/category.jpg')}}" class="img-fluid" alt="">
                     <div class="cat_text">
                         <h3>Overflow Tanks and External Transmission Cooler</h3>
                         <a href="{{route('UI_product_list',[6])}}" class="btn btn_red"> Shop Now</a>
