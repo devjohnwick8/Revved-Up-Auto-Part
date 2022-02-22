@@ -156,7 +156,7 @@
                                     <div class="row">
                                         <div class="col-md-4  col-sm-4 col-xs-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="type_address" id="flexRadioDefault1" value="0">
+                                                <input class="form-check-input" type="radio" name="type_address" checked  id="flexRadioDefault1" value="0">
                                                 <label class="form-check-label" for="flexRadioDefault1" required>
                                                     Residential
                                                 </label>

@@ -25,7 +25,7 @@
         }
     </style>
 
-    <div class="preloader d-none" id="test" ></div>
+    <!-- <div class="preloader d-none" id="test" ></div> -->
     @push('js')
         <script>
             function myFunction() {
@@ -41,6 +41,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="banner_text black_bg">
                     <h1>Review & Place Order</h1>
+                
                 </div>
             </div>
         </div>
@@ -80,6 +81,7 @@
                     <form role="form" action="{{route('stripe_post')}}" method="post" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                         @csrf
                         <div class='form-row row'>
+                            <input type="text" id="finaltotal" name="finaltotal"  value="0" hidden  />
                             <div class='col-md-12 col-sm-12 col-xs-12 form-group required'>
                                 <div class="my_re">
                                     <label class='control-label'>Name on Card</label>
@@ -258,6 +260,7 @@
                         </thead>
                         <tbody>
                             @if($products)
+                          
                             @foreach($products as $value)
                             <tr>
                                 <th class="recap">{{$value->title}} </th>
@@ -281,14 +284,53 @@
 
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
+                  
+                               
                             <div class="side_subtotal">
                                 <ul>
                                     @php $subtotal = session()->get('subtotal') @endphp
-                                    <li>Subtotal: $ {{$subtotal ? $subtotal : 0}}
+                                    <li class="subtotaly">Subtotal: $ {{$subtotal ? $subtotal : 0}}
+                                        <br>
                                     </li>
+                                    <li>Shipping
+                                        </li>
+                                        <br>
+                                      
+                            
+                                        @if($zero === 0)
+                                    
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        FedEx Express Saver (3 Business days) - $71.50
+                                        </label>
+                                        <input class="form-check-input"  type="radio"  name="myradio" value="40"  checked>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                        FedEx 2-Day - $84.95
+                                        </label>
+                                    <input class="form-check-input" type="radio"  name="myradio" value="30"  >
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                        FedEx Priority Overnight - $104.95
+                                        </label>
+                                    <input class="form-check-input " type="radio" name="myradio" value="20" >
+                                    </div>
+                                    @else
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="myradio" value="40"  checked>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        FedEx Express Saver (3 Business days) - $71.50
+                                        </label>
+                                    </div>
+                                    @endif
+                                
+                                    
                                     <!-- <li>Shipping: $89.85</li>
                                     <li>Tax/Handle:$0.00</li> -->
-                                    <li>TOTAL: $ {{$subtotal ? $subtotal : 0}}</li>
+                                    <li class="subtotaly">TOTAL: $ <span id="total">{{$subtotal ? $subtotal : 0}}</span></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -304,5 +346,42 @@
 <!-- Review and place order start -->
 
 
+@push('js')
+<!-- <script>
+function myradio() {
+    //var x = document.getElementById("mycheck").value;
+    let rad = $(this).val();
+    console.log(rad);
+
+  //document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+let radio = $('.myclass').val();
+console.log(radio);
+
+
+</script> -->
+
+<script>
+
+
+jQuery(document).ready(function(){
+    let x =   parseInt(40) + {{$subtotal}}
+    $('#total').html(x);
+    $('#finaltotal').val(x);
+
+$('input:radio[name="myradio"]').change(function(){
+    let x = parseInt($(this).val()) + {{$subtotal}};
+    $('#total').html(x);
+    $('#finaltotal').val(x);
+
+    
+});
+
+});
+
+// ]]>
+</script>
+
+@endpush
 
 @endsection

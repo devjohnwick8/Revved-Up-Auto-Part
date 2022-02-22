@@ -125,14 +125,32 @@ class UICartController extends EmailController
     {
 
         $cart = session()->get('cart');
+        $zero = null;
+         $one = null;
+         $both = null;
         if ($cart != []) {
             foreach ($cart as $value) {
-                $products[] = ProductsModel::with('product_year')->where('id', $value['id'])->first();
+                $products[] = ProductsModel::with('product_sub_category','product_year')->where('id', $value['id'])->first();
             }
-            return view('review', compact('products', 'cart'));
+            
+            foreach($products as $key => $value){
+                    $one += $value->product_sub_category->vendor;
+            }
+            if($one == 0){
+                $zero = 0;
+            }else{
+                $both = 2;
+            }
+            
+
+       
+ 
+            
+            return view('review', compact('products', 'cart', 'zero' ,'one' ,'both' ));
         } else {
             $products = null;
-            return view('review', compact('products'));
+            $zero = null;
+            return view('review', compact('products', 'zero'));
         }
     }
 
@@ -189,7 +207,8 @@ class UICartController extends EmailController
 
      public function event_stripe(Request $req)
     {
-        $total = session()->get('subtotal');
+      
+        $total = $req->finaltotal;
         $order_number = rand(1999999999999999, 9999999999999999);
         $user = Auth::user();
         $desc = 'Payment CheckOut';
@@ -258,11 +277,12 @@ class UICartController extends EmailController
             session()->forget('billing_information');
             session()->forget('shipping');
             session()->forget('cart');
+            session()->forget('subtotal');
         } else {
             return redirect(route('UI_review'));
         }
 
-        $this->order_place($data['order_number']);
+        $this->order_place($data['order_number']);  
         return redirect()->route('UI_thank_you')->with('success', 'Thank you for purchasing...');
     }
 }

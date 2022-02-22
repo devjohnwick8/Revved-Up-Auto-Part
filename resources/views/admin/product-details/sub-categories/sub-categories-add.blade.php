@@ -40,6 +40,17 @@
                                           {--   @endforeach --}
                                         </select>
                                     </div> -->
+                                     <div class="mb-4">
+                                        <label class="my-1 mr-2" for="country">Vendor</label>
+                                        <select class="form-select" id="parent_category" name="vendor">
+                                            <option selected hidden disabled>Select Vendor</option>
+                                        
+                                            <option value="0">Vendor 1</option>
+                                                <option value="1">Vendor 2</option>
+                                        
+                                        </select>
+                                </div>
+                                    
                                     <fieldset class="my-4">
                                         <legend class="h6">Status</legend>
                                         <div class="form-check">

@@ -22,7 +22,7 @@ class Controller extends BaseController
         ));
         $charge = Stripe\Charge::create([
             "customer" => $customer->id,
-            "amount" => $price * 100,
+            "amount" => (int)$price * 100,
             "currency" => "usd",
             "description" => $desc
         ]);

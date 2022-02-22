@@ -27,7 +27,7 @@
                                     <div class="form_sec">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                <h3>Auto Parts Quick Search</h3>
+                                                <h3>Find Your Part</h3>
                                             </div>
                                             <div class="inner_form">
                                               
@@ -215,10 +215,14 @@
                     <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
                     <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
                 </div>
+                <div class="mera_btn">
+                    <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>  
+                </div>
             </div>
         </div>
     </div>
 </section>
+<br/>
 <!-- categorie_sec start  -->
 <section class="categorie_sec">
     <div class="container">
@@ -267,7 +271,7 @@
                         <h3>Overflow Tanks and External Transmission Cooler</h3>
                         <a href="{{route('UI_product_list',[6])}}" class="btn btn_red"> Shop Now</a>
                     </div>
-                </div>
+            </div>
             </div>
         </div>
         <!--<div class="row">-->

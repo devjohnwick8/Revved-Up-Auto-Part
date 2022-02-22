@@ -92,7 +92,8 @@ class AdminProductDetailsController extends Controller
         $create = 1;
         (isset($sub_categories->id) and $sub_categories->id>0)?$create=0:$create=1;
         $sub_categories->title = $request->title;
-        $sub_categories->parent_category = 1;                                                
+        $sub_categories->parent_category = 1;                                          
+        $sub_categories->vendor = $request->vendor;                                                
         $sub_categories->status = $request->status;
         $sub_categories->save();
         if($create == 0)

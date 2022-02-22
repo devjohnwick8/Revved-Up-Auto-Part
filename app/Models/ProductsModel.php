@@ -64,8 +64,9 @@ class ProductsModel extends Model
     {
         return $this->hasOne(ProductMakeModel::class, 'id', 'make');
     }
-    public function product_category()
+    public function product_sub_category()
     {
-        return $this->hasOne(CategoriesModel::class, 'id', 'sub_categories');
+        return $this->hasOne(SubCategoriesModel::class, 'id', 'sub_categories');
     }
+
 }

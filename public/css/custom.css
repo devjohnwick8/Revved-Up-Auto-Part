@@ -518,7 +518,7 @@ header {
 }
 
 .social_icon {
-    margin: 0 auto;
+
     display: table;
 }
 
@@ -1084,7 +1084,7 @@ header {
 
 .big_img .btn.btn_red {
     position: absolute;
-    bottom: 30px;
+    bottom: 80px;
     left: 80px;
 }
 
@@ -2826,17 +2826,10 @@ section.warranty {
         font-size: 28px;
         line-height: 34px;
     }
+    .important {
+        margin-top: 20%;
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width: 425px) {
@@ -2955,6 +2948,9 @@ section.warranty {
         font-size: 12px;
         padding: 10px 5px !important;
     }
+    .important {
+        margin-top: 20%;
+    }
 }
 
 @media (max-width: 375px) {
@@ -3038,6 +3034,9 @@ section.warranty {
 
     .btn-close {
         top: 20px;
+    }
+    .important {
+        margin-top: 25%;
     }
 }
 
@@ -3269,6 +3268,9 @@ section.warranty {
     tr.gray th {
         font-size: 10px;
         padding: 20px 8px !important;
+    }
+    .important {
+        margin-top: 25%;
     }
 }
 
@@ -4011,7 +4013,8 @@ li.color-change {
     }
     
     .side_subtotal ul {
-    float: right;
+        float: left;
+        width: 100%;
     }
     
     .side_subtotal li {
@@ -5004,4 +5007,34 @@ ul.prd-ul li a:hover{}
     border-top: 1px solid #e42525;
     border-bottom: 1px solid #e42525;
     padding: 10px 0;
+}
+
+
+.mera_btn a {
+    position: absolute;
+    left: 80px;
+    top: -60px;
+}
+.mera_btn {
+    position: relative;
+}
+
+/* Check Box Review */
+
+.form-check {
+    display: block;
+    min-height: 2.5rem;
+    padding-left: 1.5em;
+    margin-bottom: 0.125rem;
+}
+
+.form-check-input[type=radio] {
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+
+.side_subtotal ul li.subtotaly {
+    text-align: right;
+    padding-right: 55px;
 }
