@@ -3275,6 +3275,20 @@ section.warranty {
 }
 
 
+/* Searchable Part Css */
+input#search {
+    border: 1px solid #ececec;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    color: #575757;
+    height: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0px 15px;
+    border-radius: 0;
+    font-weight: 600;
+}
 
 
 

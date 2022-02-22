@@ -260,7 +260,8 @@ Route::Post('part-not-found', [UIController::class, 'add_part_not_found'])->name
 Route::get('single-product/{id}', [UIController::class, 'single_product'])->name('UI_single_product');
 Route::get('thank-you', [UIController::class, 'thank_you'])->name('UI_thank_you')->middleware('auth');
 Route::post('single-product-data', [UISearchController::class, 'shopnow'])->name('UI_shopnow');
-Route::post('single-product-part-data', [UISearchController::class, 'search_part'])->name('UI_search_part');
+// Route::post('single-product-part-data', [UISearchController::class, 'search_part'])->name('UI_search_part');
+Route::get('single-product-part-data', [UISearchController::class, 'search_part'])->name('UI_search_part');
 
 /**UI Cart Routes starts*/
 Route::get('cart', [UICartController::class, 'cart'])->name('UI_cart');

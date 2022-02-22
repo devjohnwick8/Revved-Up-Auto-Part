@@ -91,15 +91,38 @@ class UISearchController extends Controller
 
     public function search_part(Request $request)
     {
-        // dd($request->part);
-        $part = ProductsModel::where('sku','LIKE','%'.$request->part.'%')
-        ->orWhere('title','LIKE','%'.$request->part.'%')
-        ->first();
+        if($request->ajax()){
+            
+         if($request->search != null)  {
+            $part = ProductsModel::where('sku','LIKE','%'.$request->search.'%')
+            ->orWhere('title','LIKE','%'.$request->search.'%')
+            ->get();
+                $output = '';
+                if (count($part) > 0) {
+                    $output .= '<table class="table table-striped">
+                                    <tbody>
+                                        ';
+                                        foreach($part as $value){
+                                        $output .= 
+                                            '<tr>
+                                                ' . $value->title . '
 
-        if ($part) {
-            return redirect()->route('UI_single_product', [$part->id]);
-        } else {
-            return redirect()->route('UI_part_not_found');
-        }
+                                            </tr>'
+                                            ;
+                                            }
+                                    $output .=  '
+                                    </tbody>
+                                </table>' ;
+                    return $output;          
+                    // return response()->json(['data', $output]);
+                    // return redirect()->route('UI_single_product', [$part->id]);
+                } else {
+                    return $output = 'No Result Found';   
+                    // return redirect()->route('UI_part_not_found');
+                }
+            }else{
+                return $output = '';   
+            }
+        } 
     }
 }

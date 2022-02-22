@@ -182,14 +182,44 @@
                                                 @endpush
                                                         <h4 class="or">  OR </h4>
                                                     
-                                                        <form method="POST" action="{{route('UI_search_part')}}">@csrf
+                                                <!-- <form method="POST" action="{{route('UI_search_part')}}">@csrf -->
+                                                <form method="POST" action="">@csrf
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
-                                                            <input type="text" placeholder="Search by Part#" name="part" required>
-                                                            <button type="submit"><img src="images/search.png" alt=""></button>
+                                                            <input type="search" class="searchable" placeholder="Search by Part#" id="search" name="part" required>
                                                         </div>
                                                     </div>
                                                 </form>
+                                                <div id="test"></div>
+                                           
+                                                    @push('js')
+                                                    <script>        
+                                                        $(document).ready(function(){
+                                                        $('#search').on('keyup', function(){
+                                                                let x = $(this).val();
+                                                                let data = {'search': x};
+                                                                let url = 'single-product-part-data';
+                                                                
+                                                                $.ajax({
+                                                                    url: url,
+                                                                    data: data,
+                                                                    type: 'GET',
+                                                                
+                                                                    success: function(data) {
+                                                                        res = data;
+                                                                        $('#test').html(data);
+
+                                                                    },
+                                                                    error: function() {
+                                                                        console.log('error');
+                                                                    }
+
+                                                                });
+                                                            });
+                                                        });
+                                                        
+                                                    </script>
+                                                    @endpush
 
                                             </div>
                                         </div>
