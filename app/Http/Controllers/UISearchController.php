@@ -99,20 +99,16 @@ class UISearchController extends Controller
             ->get();
                 $output = '';
                 if (count($part) > 0) {
-                    $output .= '<table class="table table-striped">
-                                    <tbody>
-                                        ';
-                                        foreach($part as $value){
-                                        $output .= 
-                                            '<tr>
-                                                ' . $value->title . '
-
-                                            </tr>'
-                                            ;
-                                            }
-                                    $output .=  '
-                                    </tbody>
-                                </table>' ;
+                    $output .= '<table class="table table-striped"><tbody>';
+                                        foreach($part as $value)
+                                        {
+                                        $output .= '<tr class="single_table">
+                                                <a href="'.route('UI_single_product',[$value->id]).'">' . $value->title . '</a>
+                                            </tr>
+                                            <br>';
+                                        }
+                                    $output .=  '</tbody></table>';
+                                // dd($output);
                     return $output;          
                     // return response()->json(['data', $output]);
                     // return redirect()->route('UI_single_product', [$part->id]);

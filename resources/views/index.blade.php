@@ -30,7 +30,7 @@
                                                 <h3>Find Your Part</h3>
                                             </div>
                                             <div class="inner_form">
-                                              
+
                                                 <form action="{{route('UI_shopnow')}}" method="POST">@csrf
                                                     <div class="row">
                                                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -38,7 +38,7 @@
                                                                 <option hidden disabled selected value="">Select Make*
                                                                 </option>
                                                                 @foreach($make as $value)
-                                                            
+
                                                                 <option class="make" value="{{$value->id}}">
                                                                     {{$value->title}}
                                                                 </option>
@@ -76,7 +76,7 @@
                                                     </div>
                                                 </form>
 
-                                               
+
                                                 <input type="hidden" value="0" id="make_demo" />
                                                 <input type="hidden" value="0" id="year_demo" />
                                                 <input type="hidden" value="0" id="model_demo" />
@@ -180,8 +180,8 @@
                                                     }
                                                 </script>
                                                 @endpush
-                                                        <h4 class="or">  OR </h4>
-                                                    
+                                                <h4 class="or"> OR </h4>
+
                                                 <!-- <form method="POST" action="{{route('UI_search_part')}}">@csrf -->
                                                 <form method="POST" action="">@csrf
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -190,51 +190,55 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <div id="test"></div>
-                                           
-                                                    @push('js')
-                                                    <script>        
-                                                        $(document).ready(function(){
-                                                        $('#search').on('keyup', function(){
-                                                                let x = $(this).val();
-                                                                let data = {'search': x};
-                                                                let url = 'single-product-part-data';
-                                                                
-                                                                $.ajax({
-                                                                    url: url,
-                                                                    data: data,
-                                                                    type: 'GET',
-                                                                
-                                                                    success: function(data) {
-                                                                        res = data;
-                                                                        $('#test').html(data);
 
-                                                                    },
-                                                                    error: function() {
-                                                                        console.log('error');
-                                                                    }
-
-                                                                });
-                                                            });
-                                                        });
-                                                        
-                                                    </script>
-                                                    @endpush
 
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+                                <div id="test"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- banner end -->
+@push('js')
+<script>
+    $(document).ready(function() {
+        $('#search').on('keyup', function() {
+            let x = $(this).val();
+            let data = {
+                'search': x
+            };
+            let url = 'single-product-part-data';
 
+            $.ajax({
+                url: url,
+                data: data,
+                type: 'GET',
+
+                success: function(data) {
+                    res = data;
+                    $('#test').html(data);
+
+                },
+                error: function() {
+                    console.log('error');
+                }
+
+            });
+        });
+    });
+</script>
+@endpush
 @include('layouts.top_pickup')
 
 <section class="big_imgsec">
@@ -246,13 +250,13 @@
                     <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
                 </div>
                 <div class="mera_btn">
-                    <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>  
+                    <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<br/>
+<br />
 <!-- categorie_sec start  -->
 <section class="categorie_sec">
     <div class="container">
@@ -280,7 +284,7 @@
                         <h3>Electric Fans</h3>
                         <a href="{{route('UI_product_list',[7])}}" class="btn btn_red"> Shop Now</a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -301,7 +305,7 @@
                         <h3>Overflow Tanks and External Transmission Cooler</h3>
                         <a href="{{route('UI_product_list',[6])}}" class="btn btn_red"> Shop Now</a>
                     </div>
-            </div>
+                </div>
             </div>
         </div>
         <!--<div class="row">-->
