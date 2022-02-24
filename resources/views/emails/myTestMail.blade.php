@@ -416,27 +416,27 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td style="padding:5px 10px 5px 0;Margin:0" width="80%" align="left">
                                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">Purchased Item {{count($details->get_order_item)}}</p>
-                                                                            </td>
+                                                                            </td> 
                                                                             <td style="padding:5px 0;Margin:0" width="20%" align="left">
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">{{$details->order_total}}</p>
+                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">${{$details->sub_total}}</p>
                                                                             </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td style="padding:5px 10px 5px 0;Margin:0" width="80%" align="left">
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">Shipping + Handling</p>
+                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">Shipping Charges </p>
                                                                             </td>
                                                                             <td style="padding:5px 0;Margin:0" width="20%" align="left">
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">$10.00</p>
+                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">${{$details->ship_price}}</p>
                                                                             </td>
                                                                         </tr>
-                                                                        <tr style="border-collapse:collapse">
+                                                                        <!-- <tr style="border-collapse:collapse">
                                                                             <td style="padding:5px 10px 5px 0;Margin:0" width="80%" align="left">
                                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">Sales Tax</p>
                                                                             </td>
                                                                             <td style="padding:5px 0;Margin:0" width="20%" align="left">
                                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333;font-size:16px">$5.00</p>
                                                                             </td>
-                                                                        </tr>
+                                                                        </tr> -->
                                                                     </table>
                                                                 </td>
                                                             </tr>
@@ -460,7 +460,7 @@
                                                                                 <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">TOTAL</h4>
                                                                             </td>
                                                                             <td width="20%" style="padding:0;Margin:0">
-                                                                                <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">{{$details->order_total}}</h4>
+                                                                                <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">${{$details->order_total}}</h4>
                                                                             </td>
                                                                         </tr>
                                                                     </table>

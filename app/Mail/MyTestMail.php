@@ -20,6 +20,8 @@ class MyTestMail extends Mailable
     public function __construct($order)
     {
         $this->details = $order;
+
+        
     }
 
     /**

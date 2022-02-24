@@ -242,11 +242,13 @@ class UICartController extends EmailController
             ];
 
             $shipping = ShippingModel::create($data_shipping);
-
+            dd($total - session()->get('subtotal'));
             $data = [
                 'order_number' => $order_number,
                 'user_id' => auth()->user()->id,
-                'order_total' => session()->get('subtotal'),
+                'sub_total' => session()->get('subtotal'),
+                'ship_price' => $total - session()->get('subtotal'),
+                'order_total' => $total,
                 'status' => 0,
                 'billing_id' => $billing->id,
                 'shipping_id' => $shipping->id,

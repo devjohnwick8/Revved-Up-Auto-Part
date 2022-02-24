@@ -301,27 +301,27 @@
                                     
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexRadioDefault1">
-                                        FedEx Express Saver (3 Business days) - $71.50
+                                        FedEx Express Saver (3 Business days) - $71
                                         </label>
-                                        <input class="form-check-input"  type="radio"  name="myradio" value="40"  checked>
+                                        <input class="form-check-input"  type="radio"  name="myradio" value="71"  checked>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                        FedEx 2-Day - $84.95
+                                        FedEx 2-Day - $84
                                         </label>
-                                    <input class="form-check-input" type="radio"  name="myradio" value="30"  >
+                                    <input class="form-check-input" type="radio"  name="myradio" value="84"  >
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                        FedEx Priority Overnight - $104.95
+                                        FedEx Priority Overnight - $104
                                         </label>
-                                    <input class="form-check-input " type="radio" name="myradio" value="20" >
+                                    <input class="form-check-input " type="radio" name="myradio" value="104" >
                                     </div>
                                     @else
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="myradio" value="40"  checked>
+                                        <input class="form-check-input" type="radio" name="myradio" value="71"  checked>
                                         <label class="form-check-label" for="flexRadioDefault1">
-                                        FedEx Express Saver (3 Business days) - $71.50
+                                        FedEx Express Saver (3 Business days) - $71
                                         </label>
                                     </div>
                                     @endif
@@ -365,12 +365,12 @@ console.log(radio);
 
 
 jQuery(document).ready(function(){
-    let x =   parseInt(40) + {{$subtotal}}
+    let x =   parseInt(40) + parseInt('{{$subtotal}}');
     $('#total').html(x);
     $('#finaltotal').val(x);
 
 $('input:radio[name="myradio"]').change(function(){
-    let x = parseInt($(this).val()) + {{$subtotal}};
+    let x = parseInt($(this).val()) + parseInt('{{$subtotal}}');
     $('#total').html(x);
     $('#finaltotal').val(x);
 

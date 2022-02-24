@@ -139,7 +139,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" value="{{auth()->user()->phone}}">
+                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" value="{{auth()->user()->phone}}">
                                 </div>
                                 <!-- <p>Valid phone format should be (xxx),xxx,xxxx</p> -->
                             </div>
