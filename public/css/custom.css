@@ -2347,16 +2347,15 @@ div#test {
     background: #fff;
     margin: -30px 29px 0 55px;
     position: absolute;
-    bottom: 116px;
-    width: 36%;
-    right: 75px;
+    bottom: 10px;
+    width: 41%;
+    right: 41px;
 }
-
 
 #test a {
     color: #000;
     padding: 0 20px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 34px;
     font-weight: 600;
 }
@@ -4209,6 +4208,18 @@ ul.prd-ul li a:hover {}
 }
 
 /* Media Query Start */
+@media (max-width: 1900px) {
+    div#test {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 1440px) {
+    div#test {
+        bottom: 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .banner_text h1 {
         font-size: 45px;
@@ -5305,6 +5316,7 @@ ul.prd-ul li a:hover {}
         line-height: 21px;
         padding: 0 5px;
     }
+
     .mera_btn a {
         left: 100px;
     }
