@@ -2,7 +2,7 @@
 @section('content')
 <!--loader-->
 <style>
-        #test {
+        #load {
             position: fixed;
 
             left: 0;
@@ -25,7 +25,7 @@
         }
     </style>
 
-    <!-- <div class="preloader d-none" id="test" ></div> -->
+    <div class="preloader d-none" id="load" ></div>
     @push('js')
         <script>
             function myFunction() {
