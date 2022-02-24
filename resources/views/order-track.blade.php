@@ -97,13 +97,13 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- <div class="col-md-3 col-sm-3 col-xs-12">
                             <div class="modify">
                                 <button class="btn btn_red">Modify / Cancel Order</button>
                                 <h6></h6>
                                 <button class="btn btn_red">Learn How</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
