@@ -12,7 +12,7 @@
   @include('layouts.header')
 
   @yield('content')
-  <!-- <script src="//code.tidio.co/aqvwqcwdctadm0fxvhkc97rjr35ticj7.js" async></script> -->
+  <script src="//code.tidio.co/aqvwqcwdctadm0fxvhkc97rjr35ticj7.js" async></script>
   @include('layouts.footer')
     
   @include('layouts.js')

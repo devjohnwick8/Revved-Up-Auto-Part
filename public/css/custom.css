@@ -2345,11 +2345,12 @@ input#search {
 
 div#test {
     background: #fff;
-    margin: -30px 29px 0 55px;
     position: absolute;
     bottom: 10px;
-    width: 41%;
-    right: 41px;
+    width: 95%;
+    right: 0;
+    left: 0;
+    margin: 120px auto 0px auto;
 }
 
 #test a {
@@ -4210,13 +4211,7 @@ ul.prd-ul li a:hover {}
 /* Media Query Start */
 @media (max-width: 1900px) {
     div#test {
-        bottom: 20px;
-    }
-}
-
-@media (max-width: 1440px) {
-    div#test {
-        bottom: 20px;
+        bottom: auto;
     }
 }
 
