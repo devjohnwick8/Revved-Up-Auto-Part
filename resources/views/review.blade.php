@@ -365,7 +365,7 @@ console.log(radio);
 
 
 jQuery(document).ready(function(){
-    let x =   parseInt(40) + parseInt('{{$subtotal}}');
+    let x =   parseInt(71) + parseInt('{{$subtotal}}');
     $('#total').html(x);
     $('#finaltotal').val(x);
 
