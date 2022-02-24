@@ -88,8 +88,7 @@
                                     <input class='form-control' size='4' type='text' id="name">
                                 </div>
                             </div>
-                        </div>
-
+                        </div>  
                         <div class='form-row row'>
                             <div class='col-md-12 col-sm-12 col-xs-12 form-group '>
                                 <div class="my_re">

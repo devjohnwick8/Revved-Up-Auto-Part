@@ -62,9 +62,9 @@
               <div class="ContactusBg">
                 <span>Locations</span>
                 <ul>
-                  <li><i class="fas fa-map-marker-alt"></i>Lorem ipsum dolor sit amet, </li>
-                  <li><i class="fas fa-envelope"></i> info@example.com</li>
-                  <li><i class="fas fa-phone-alt"></i> +00 123-456-789</li>
+                  <li><i class="fas fa-map-marker-alt"></i> 212 BULKHEAD AVE Manahawkin, NJ 08050, </li>
+                  <li><i class="fas fa-envelope"></i> revvedupautoparts@gmail.com</li>
+                  <li><i class="fas fa-phone-alt"></i> 888-297-3077</li>
                 </ul>
               </div>
             </div>

@@ -49,9 +49,9 @@
           <h5>Connect With Us</h5>
           <div class="social_icon">
             <ul>
-              <li><a href="javascript:void(0)"><img src="{{asset('images/f.png')}}" class="img-fluid" alt=""></a></li>
-              <li><a href="javascript:void(0)"><img src="{{asset('images/p.png')}}" class="img-fluid" alt=""></a></li>
-              <li><a href="javascript:void(0)"><img src="{{asset('images/i.png')}}" class="img-fluid" alt=""></a></li>
+              <li><a href="https://www.facebook.com/revvedupautoparts" target="_blank"><img src="{{asset('images/f.png')}}" class="img-fluid" alt=""></a></li>
+              <li><a href="https://www.pinterest.com/revvedupautoparts/_saved/" target="_blank"><img src="{{asset('images/p.png')}}" class="img-fluid" alt=""></a></li>
+              <li><a href="https://www.instagram.com/accounts/login/?next=/revvedupautoparts/" target="_blank"><img src="{{asset('images/i.png')}}" class="img-fluid" alt=""></a></li>
             </ul>
           </div>
         </div>

@@ -20,7 +20,7 @@
 
                   @if(auth()->check())
                     <li class="dropdown">
-                    <a href="javascript:void(0)"><i class="fas fa-user-tie"></i> {{auth()->user()->first_name}}</a>
+                    <a href="javascript:void(0)"> {{auth()->user()->first_name}}</a>
                       <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
                       <ul class="dropdown-menu">
                         <li><a href="{{route('UI_my_profile')}}">My Profile</a></li>
@@ -38,9 +38,9 @@
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="social_icon">
                   <ul>                   
-                    <li><a href="javascript:void(0)"><img src="{{asset('images/f.png')}}" class="img-fluid" alt=""></a></li>
-                    <li><a href="javascript:void(0)"><img src="{{asset('images/p.png')}}" class="img-fluid" alt=""></a></li>
-                    <li><a href="javascript:void(0)"><img src="{{asset('images/i.png')}}" class="img-fluid" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/revvedupautoparts" target="_blank"><img src="{{asset('images/f.png')}}" class="img-fluid" alt=""></a></li>
+                    <li><a href="https://www.pinterest.com/revvedupautoparts/_saved/" target="_blank"><img src="{{asset('images/p.png')}}" class="img-fluid" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/accounts/login/?next=/revvedupautoparts/" target="_blank"><img src="{{asset('images/i.png')}}" class="img-fluid" alt=""></a></li>
                   </ul>
                 </div>
               </div>
