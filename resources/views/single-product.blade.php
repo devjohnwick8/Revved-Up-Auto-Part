@@ -202,9 +202,9 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Vehicle Fitment</button>
                         </li>
-                        <!-- <li class="nav-item" role="presentation">
-                            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Warranty & Returns</button>
-                        </li> -->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Warranty</button>
+                        </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
 
@@ -243,8 +243,8 @@
 
                             </div>
                         </div>
-                        <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                            <p>COVID-19 UPDATE: YES all online orders are still shipping out daily with UPS and FEDEX
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <!-- <p>COVID-19 UPDATE: YES all online orders are still shipping out daily with UPS and FEDEX
                                 Services . Thank you for your patronage during this national crisis</p>
                             <p>(Only works if your inlet hose diameter is 1 1/2)</p>
                             <p>Preserve your radiator and heater core from debris damage and potential clogs. This filter is
@@ -256,9 +256,8 @@
                                 or when exiting.</p>
                             <p>Don't replace a radiator and watch it fail because of dirty fluid or rust coming from your
                                 block. protect your vehicle and clean your engine in one simple step. Attach this filter to
-                                your top hose connection.</p>
-                        </div> -->
-
+                                your top hose connection.</p> -->
+                        </div>
                     </div>
                 </div>
             </div>
