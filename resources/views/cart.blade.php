@@ -93,19 +93,16 @@
             <div class="proceed">
                 <div class="row">
                     <div class="col-md-7 col-sm-7 col-xs-12">
-                        <div class="my_payment">
-                            <h4>Payment Option</h4>
-                            <img src="./images/pay.png" alt="">
-                        </div>
+
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="main_sub">
-                                    <h5>Merchandise Subgtotal:</h5>
-                                    <h5>Shipping Estimate:</h5>
-                                    <h5>Warranty Coverage:</h5>
+                                    <h5>Merchandise SubTotal:</h5>
+                                    <h5>Shipping:</h5>
                                 </div>
+
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
 
@@ -114,19 +111,24 @@
 
                                     <h6>${{$subtotal}} </h6>
 
-                                    <h6>1-3 Days*</h6>
-                                    <h6>Free*</h6>
+                                    <h6>Free</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="my_payment text-center">
+                                    <h4>Payment Option</h4>
+                                    <img src="./images/pay.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-">
-                                <div class="main_pera">
+                                <!-- <div class="main_pera">
                                     <p>Applicable ship/handling will be calculated at final page checkout</p>
                                     <p>Click blue asterick for more info on shipment and warranty inclusions</p>
 
 
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 

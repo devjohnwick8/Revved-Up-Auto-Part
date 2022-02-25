@@ -91,15 +91,12 @@
                                 <div class="sku">
                                     <h4>SKU:</h4>
                                     <h4>Brand:</h4>
-                                    <h4>Short Description:</h4>
-
                                 </div>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <div class="sku_num">
                                     <h4>{{$single_product->sku}}</h4>
                                     <h4>{{$single_product->brand}}</h4>
-                                    <h4>{{$single_product->description}}</h4>
                                     <!--// <h4>{{$single_product->condition == 1 ? 'New' : 'Old'}}</h4> -->
                                     <!-- 
                                     <ul>
@@ -110,6 +107,11 @@
                                     </ul> -->
                                 </div>
                             </div>
+                            <class="col-md-12 col-sm-12 col-xs-12">
+                            <h4 class="des">{{$single_product->description}}</h4>
+
+                            </div>
+
                         </div>
                         <div> 
                             @if($product_available)
@@ -200,9 +202,9 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Vehicle Fitment</button>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">warranty & returns</button>
-                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Warranty & Returns</button>
+                        </li> -->
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
 
@@ -212,7 +214,7 @@
                                     <img src="{{$product_specification ? asset('uploads/specifications/'.$product_specification->title) : ''}}" alt="">
                                 </div>
                                 <br />
-                                <h5 style="text-align:center"> CALIFORNIA WARNING: Cancer and Reproductive Harm - www.p65warnings.ca.gov</h5>
+                                <h5 style="text-align:center"> CALIFORNIA WARNING: Cancer and Reproductive Harm - <a href="www.p65warnings.ca.gov">www.p65warnings.ca.gov</a></h5>
 
                             </div>
                         </div>
@@ -241,7 +243,7 @@
 
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                             <p>COVID-19 UPDATE: YES all online orders are still shipping out daily with UPS and FEDEX
                                 Services . Thank you for your patronage during this national crisis</p>
                             <p>(Only works if your inlet hose diameter is 1 1/2)</p>
@@ -255,7 +257,7 @@
                             <p>Don't replace a radiator and watch it fail because of dirty fluid or rust coming from your
                                 block. protect your vehicle and clean your engine in one simple step. Attach this filter to
                                 your top hose connection.</p>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>

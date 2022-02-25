@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('images/banner-2.jpg')}}" class="img-fluid" alt="...">
+        <img src="{{asset('images/banner-3.jpg')}}" class="img-fluid" alt="...">
         <div class="carousel-caption">
           <div class="container">
             <div class="row">

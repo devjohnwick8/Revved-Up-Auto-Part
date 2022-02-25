@@ -229,7 +229,7 @@
                 </div>
                 <div class="important">
                     <span>Important:</span>
-                    <p>By placing your order, you agree to RadiatorExpress.com's privacy notice and "conditions of use".
+                    <p>By placing your order, you agree to <a href="revvedupautoparts.com">revvedupautoparts.com</a> privacy notice and "conditions of use".
                     </p>
                     <p>Your order is not complete until you click the "place Order" button . Once you have placed an
                         order,we will send you an email confirmation as well as status updates</p>
@@ -241,7 +241,7 @@
                 <div class="summary">
                     <h2>Order Summary</h2>
                     <h3>Need Help? Text or </h3>
-                    <h4>Call 609 978 666 X 1</h4>
+                    <h4>Call 888-297-3077</h4>
                     <!-- <h5>Need to Make a </h5>
                     <h6>Change? <a href="javascript:void(0)"> EDIT Cart</a></h6> -->
                 </div>
@@ -291,7 +291,8 @@
                                     <li class="subtotaly">Subtotal: $ {{$subtotal ? $subtotal : 0}}
                                         <br>
                                     </li>
-                                    <li>Shipping
+                                    <li> <h3>Rush Delivery</h3></li>
+                                    <li>Standard Free Shipping
                                         </li>
                                         <br>
                                       

@@ -1,7 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 
 /***** General CSS *****/
+.tab_content h5 a {
+    color: #e42525;
+}
 
+.important p a {
+    color: #e40303;
+}
+.form-check label {
+    font-weight: 600;
+}
+.side_subtotal ul li h3 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 25px;
+    line-height: 34px;
+    color: #e12828;
+    font-weight: 700;
+    margin: 0 0 0;
+}
+h4.des  {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 30px;
+    line-height: 25px;
+    color: #e42525;
+    font-weight: bold;
+    margin: 0;
+}
 body {
     word-break: break-word;
     font: 15px/25px "Rajdhani", sans-serif;
@@ -125,13 +150,21 @@ p {
     height: 58px;
     width: 175px;
     background: #ef0202;
+    transition: all 0.5s ease-in-out;
 }
+
+a.btn.btn_red {}
+
+a.btn.btn_red {}
+
+a.btn.btn_red {}
 
 .btn.btn_red:focus,
 .btn.btn_red:hover {
-    background-color: transparent;
-    color: #ef0202;
+    background-color: #ef0202;
+    color: #ffffff;
     border: 2px solid #ef0202;
+    transform: scale(1.1);
 }
 
 .centerCol {
@@ -1019,13 +1052,16 @@ header {
 .cat_main {
     position: relative;
     margin: 0 0 5%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px #ef0202;
 }
 
 .cat_main img {
-    border-radius: 20px;
+    border-radius: 0!important;
     width: 100%;
-    height: 320px;
+    height: 350px;
     object-fit: cover;
+    padding: 2px;
 }
 
 .cat_text h3 {
@@ -1036,6 +1072,7 @@ header {
     margin: 0 0 0px;
     z-index: 5;
     position: relative;
+    text-transform: capitalize;
 }
 
 .cat_text .btn.btn_red {
@@ -1061,7 +1098,7 @@ header {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
     /* IE6-9 */
-    border-radius: 20px;
+    border-radius: 0;
     position: absolute;
     top: 0;
     left: 0;

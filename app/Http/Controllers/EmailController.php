@@ -17,8 +17,6 @@ class EmailController extends Controller
         }else{
             return back()->with('Order Not Found');
         }
-
-       
     }
 
     public function contact_us_email($contact){
@@ -29,8 +27,6 @@ class EmailController extends Controller
         }else{
             return back()->with('Email Not Found');
         }
-
-       
     }
 
 }
