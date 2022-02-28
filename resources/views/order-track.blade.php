@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-12">
                             <div class="main_ship">
-                            <h4>phone Number</h4>
+                            <h4>Phone Number</h4>
                                 <!-- <ul> -->
                                     <li>{{$orders ? $orders->get_shipping ? $orders->get_shipping->phone : '' : ''}}</li>
                                 <!-- </ul> -->
