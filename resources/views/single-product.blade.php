@@ -244,7 +244,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                            <!-- <p>COVID-19 UPDATE: YES all online orders are still shipping out daily with UPS and FEDEX
+                            <p>COVID-19 UPDATE: YES all online orders are still shipping out daily with UPS and FEDEX
                                 Services . Thank you for your patronage during this national crisis</p>
                             <p>(Only works if your inlet hose diameter is 1 1/2)</p>
                             <p>Preserve your radiator and heater core from debris damage and potential clogs. This filter is
@@ -256,7 +256,7 @@
                                 or when exiting.</p>
                             <p>Don't replace a radiator and watch it fail because of dirty fluid or rust coming from your
                                 block. protect your vehicle and clean your engine in one simple step. Attach this filter to
-                                your top hose connection.</p> -->
+                                your top hose connection.</p>
                         </div>
                     </div>
                 </div>

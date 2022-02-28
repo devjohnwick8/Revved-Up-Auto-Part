@@ -14,12 +14,12 @@
         <div class="carousel-caption">
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+              <!-- <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
                 <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
                   @include('layouts/flash-message')
                   <h1 class="wow zoomIn">Get the Right Part at the Right Price!</h1>
                 </div>
-              </div>
+              </div> -->
               <div class="col-xs-12 col-sm-6 col-md-6">
               </div>
             </div>
@@ -31,12 +31,12 @@
         <div class="carousel-caption">
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+              <!-- <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
                 <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
                   @include('layouts/flash-message')
                   <h1 class="wow zoomIn">Get the Right Part at the Right Price!</h1>
                 </div>
-              </div>
+              </div> -->
               <div class="col-xs-12 col-sm-6 col-md-6">
               </div>
             </div>
