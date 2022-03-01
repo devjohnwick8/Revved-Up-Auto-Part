@@ -10,7 +10,7 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('images/banner.jpg')}}" class="img-fluid" alt="...">
+        <img src="{{asset('images/banner-2.jpg')}}" class="img-fluid" alt="...">
         <div class="carousel-caption">
           <div class="container">
             <div class="row">
