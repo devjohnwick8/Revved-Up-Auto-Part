@@ -921,7 +921,7 @@ header {
 
 .banner_text {
     margin: 0;
-    background: rgb(0 0 0 / 53%);
+    /* background: rgb(0 0 0 / 53%); */
     width: 100%;
     display: block;
     padding: 30px;
