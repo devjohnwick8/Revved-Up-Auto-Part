@@ -61,7 +61,7 @@
                     <ul id="menu">
                         <li><a href="{{route('UI_home')}}">Home</a></li>
                         <li><a href="javascript:void(0)">Reviews</a></li>
-                        <li><a href="{{route('UI_track')}}">Order Tracking</a></li>
+                        <!-- <li><a href="{{route('UI_track')}}">Order Tracking</a></li> -->
                         <li><a href="{{route('UI_about_us')}}">About Us</a></li>
                         <li><a href="{{route('UI_contact_us')}}">Contact Us</a></li>
                         <li><a href="tel:888-297-3077">

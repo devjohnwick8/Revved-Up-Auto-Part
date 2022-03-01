@@ -14,29 +14,37 @@
         <div class="carousel-caption">
           <div class="container">
             <div class="row">
-              <!-- <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+              <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
                 <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
                   @include('layouts/flash-message')
-                  <h1 class="wow zoomIn">Get the Right Part at the Right Price!</h1>
+                  <h1 class="wow zoomIn">Inhouse Fabrication</h1>
+     
                 </div>
-              </div> -->
+                <div class="mera_btn">
+                    <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>
+                  </div>
+              </div>
               <div class="col-xs-12 col-sm-6 col-md-6">
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item"> 
         <img src="{{asset('images/banner-3.jpg')}}" class="img-fluid" alt="...">
         <div class="carousel-caption">
           <div class="container">
-            <div class="row">
-              <!-- <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
+          <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
                 <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
                   @include('layouts/flash-message')
-                  <h1 class="wow zoomIn">Get the Right Part at the Right Price!</h1>
+                  <h1 class="wow zoomIn">Inhouse Fabrication</h1>
+     
                 </div>
-              </div> -->
+                <div class="mera_btn">
+                    <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>
+                  </div>
+              </div>
               <div class="col-xs-12 col-sm-6 col-md-6">
               </div>
             </div>
@@ -62,7 +70,7 @@
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <select name="make" id="make" required>
-                    <option hidden disabled selected value="">Select Make*
+                    <option hidden disabled selected value="">Select Product*
                     </option>
                     @foreach($make as $value)
                     <option class="make" value="{{$value->id}}">
@@ -263,22 +271,25 @@
 </script>
 @endpush
 @include('layouts.top_pickup')
-<section class="big_imgsec">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="big_img">
-          <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
-          <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
+<section class="AboutUsMain">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="AboutContent">
+            <span>ABOUT US</span>
+            <p>Revved Up Auto Parts (“Revved Up”) is a privately held auto parts supplier. We supply quality replacement parts for all vehicles. Our parts are shipped directly from our network of warehouses nationwide with a guaranteed delivery time of 1-2 business days.</p>
+            <p>Our mission is to provide unsurpassed customer service and competitively priced, quality-built products delivered with lightning speed.</p>
+            <a href="{{route('UI_about_us')}}" class=" btn btn_red ">Read More</a>
+          </div>
         </div>
-        <div class="mera_btn">
-          <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="Aboutimg">
+            <img src="http://localhost:8000/images/about-img2.jpg" alt="" class="img-fluid">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<br />
+  </section>
 <!-- categorie_sec start  -->
 <section class="categorie_sec">
   <div class="container">
@@ -344,5 +355,20 @@
   </div>
 </section>
 <!-- radiator sec start  -->
+<section class="big_imgsec">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="big_img">
+          <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
+          <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<br />
+
 @include('layouts.review-slider')
 @endsection

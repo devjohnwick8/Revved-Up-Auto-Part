@@ -4216,11 +4216,7 @@ ul.prd-ul li a:hover {}
 }
 
 
-.mera_btn a {
-    position: absolute;
-    left: 80px;
-    top: -60px;
-}
+.mera_btn a {margin: 20px 0 0 !important;display: block;}
 
 .mera_btn {
     position: relative;
