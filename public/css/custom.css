@@ -4549,10 +4549,10 @@ div#test {
     }
 
     .mera_btn a {
-        bottom: 0;
-        left: 180px;
-        top: -48px;
-        font-size: 16px !important;
+        /* bottom: 0; */
+        /* left: 180px; */
+        /* top: -48px; */
+        /* font-size: 16px !important; */
     }
 }
 
@@ -4596,8 +4596,16 @@ div#test {
         width: 80%;
         text-align: center;
         padding: 10px 0;
-        bottom: 230px;
+        bottom: 290px;
         position: relative;
+    }
+    .mera_btn a.btn.btn_red {
+        bottom: 240px;
+        position: absolute;
+        left: 180px;
+        right: 0;
+        margin: 0 auto;
+        display: table;
     }
 
     .form_sec {
@@ -4819,10 +4827,13 @@ div#test {
     }
 
     .mera_btn a {
-        bottom: 0;
-        left: 160px;
-        top: -9px;
-        font-size: 16px !important;
+        /* bottom: 0; */
+        /* left: 160px; */
+        /* top: -9px; */
+        /* font-size: 16px !important; */
+    }
+    .inner_form button {
+        margin: 0 0 10px;
     }
 
 }
@@ -4954,7 +4965,7 @@ div#test {
 
     .form_sec {
         width: 90%;
-        top: 29%;
+        top: 34%;
     }
 
     .inner_form button {
@@ -4976,10 +4987,19 @@ div#test {
     }
 
     .mera_btn a {
-        left: 120px;
-        top: -8px;
-        font-size: 14px !important;
-        line-height: 16px !important;
+        /* left: 120px; */
+        /* top: -8px; */
+        /* font-size: 14px !important; */
+        /* line-height: 16px !important; */
+    }
+    .mera_btn a.btn.btn_red {
+        bottom: 240px;
+        position: absolute;
+        left: 110px;
+        right: 0;
+        margin: 0 auto;
+        display: block;
+        font-size: 16px;
     }
 
 
@@ -5081,10 +5101,23 @@ div#test {
     }
 
     .mera_btn a {
-        left: 110px;
-        top: -8px;
-        font-size: 14px !important;
-        line-height: 16px !important;
+        /* left: 110px; */
+        /* top: -8px; */
+        /* font-size: 14px !important; */
+        /* line-height: 16px !important; */
+    }
+    .form_sec {
+        width: 90%;
+        top: 32%;
+    }
+    .mera_btn a.btn.btn_red {
+        bottom: 240px;
+        position: absolute;
+        left: 100px;
+        right: 0;
+        margin: 0 auto;
+        display: block;
+        font-size: 16px;
     }
 }
 

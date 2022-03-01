@@ -15,14 +15,14 @@
           <div class="container">
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
-                <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
+                <!-- <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
                   @include('layouts/flash-message')
                   <h1 class="wow zoomIn">Inhouse Fabrication</h1>
      
                 </div>
                 <div class="mera_btn">
                     <a href="javascript:void(0)" class="btn btn_red" data-bs-toggle="modal" data-bs-target="#exampleModal">Radiator Modifications </a>
-                  </div>
+                  </div> -->
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6">
               </div>
