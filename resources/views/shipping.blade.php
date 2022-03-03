@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{auth()->user()->first_name}}">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{auth()->user() ? auth()->user()->first_name : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{auth()->user()->last_name}}">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{auth()->user() ? auth()->user()->last_name : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="shipping_address" value="{{auth()->user()->address1}}">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="shipping_address" value="{{auth()->user() ? auth()->user()->address1 : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="business" value="{{auth()->user()->address2}}">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="business" value="{{auth()->user() ? auth()->user()->address2 : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" value="{{auth()->user()->city}}">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" value="{{auth()->user() ? auth()->user()->city : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="ship_state" value="{{auth()->user()->state}}">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="ship_state" value="{{auth()->user() ? auth()->user()->state : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="zip_code" value="{{auth()->user()->zip_code}}">
+                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="zip_code" value="{{auth()->user() ? auth()->user()->zip_code : ''}}">
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="ship">
-                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" value="{{auth()->user()->phone}}">
+                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" value="{{auth()->user() ? auth()->user()->phone : ''}}">
                                 </div>
                                 <!-- <p>Valid phone format should be (xxx),xxx,xxxx</p> -->
                             </div>

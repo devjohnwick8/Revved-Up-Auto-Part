@@ -15,15 +15,15 @@ class UIAuthController extends Controller
 {
     public function login()
     {
-        $my_path = session()->get('_previous')['url'];
-        if (auth()->check()) {
-        return redirect()->route('UI_home');
-        }else{
-        session()->put('my_url' , $my_path);    
+        // $my_path = session()->get('_previous')['url'];
+        // if (auth()->check()) {
+        // return redirect()->route('UI_home');
+        // }else{
+        // session()->put('my_url' , $my_path);    
         $cart = session()->get('cart');
         return view('login', compact('cart'));
               
-        }
+        // }
     }
     public function login_data(Request $request)
     {
@@ -34,14 +34,14 @@ class UIAuthController extends Controller
                 if (Hash::check($request->password, $userfind->password)) {
                     /*matched password*/
                     Auth::login($userfind);
-                    if (Auth::check()) {
-                        // dd()
-                    $url = (session()->get('my_url'));
-                      return Redirect::away($url);
-                    //   return header("Location: $url");
+                    // if (Auth::check()) {
+                    //     // dd()
+                    // // $url = (session()->get('my_url'));
+                    // //   return Redirect::away($url);
+                    // //   return header("Location: $url");
                       
-                    } else {
-                        return redirect(route('UI_Login'));
+                    // } else {
+                        return redirect(route('UI_home'));
                     }
                     /*matched password end*/
                 } else {
@@ -51,9 +51,9 @@ class UIAuthController extends Controller
             } else {
                 return redirect(route('UI_Login'))->with('Failed_Email', 'Email not found');
             }
-        } else {
-            return redirect(route('UI_Login'))->with('Failed_Empty', 'Please fill required fields');
-        }
+        // } else {
+        //     return redirect(route('UI_Login'))->with('Failed_Empty', 'Please fill required fields');
+        // }
       
     }
     public function create_account()

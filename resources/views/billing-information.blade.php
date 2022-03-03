@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{auth()->user()->first_name}}" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{auth()->user() ? auth()->user()->first_name : ''}}" required>
                             </div>
                         </div>
                         <div class="row">
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{auth()->user()->last_name}}" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{auth()->user() ? auth()->user()->last_name : ''}}" required>
                             </div>
                         </div>
                         <div class="row">
@@ -77,7 +77,8 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="billing_address" value="{{auth()->user()->address1}}" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="billing_address" value="{{
+                                    auth()->user() ? auth()->user()->address1 : ''}}" required>
                             </div>
                         </div>
                         <div class="row">
@@ -87,7 +88,8 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="business" value="{{auth()->user()->address2}}" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="business" value="{{
+                                    auth()->user() ? auth()->user()->address2 : ''}}" required>
                             </div>
                         </div>
                         <div class="row">
@@ -97,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" value="{{auth()->user()->city}}" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" value="{{auth()->user() ? auth()->user()->city : ''}}" required>
                             </div>
                         </div>
                         <div class="row">
@@ -108,7 +110,7 @@
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="bil_state">
-                                    <input type="text" class="form-control" list="datalistOptions" id="exampleDataList" name="bil_state" value="{{auth()->user()->state}}" required>
+                                    <input type="text" class="form-control" list="datalistOptions" id="exampleDataList" name="bil_state" value="{{auth()->user() ? auth()->user()->state : ''}}" required>
 
                                 </div>
                             </div>
@@ -121,7 +123,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="zip_code" value="{{auth()->user()->zip_code}}" required>
+                                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="zip_code" value="{{auth()->user() ? auth()->user()->zip_code : ''}}" required>
                             </div>
                         </div>
                         <button type="submit"><i class="fas fa-check"></i> Go to Next

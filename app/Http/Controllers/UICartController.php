@@ -58,13 +58,13 @@ class UICartController extends EmailController
 
     public function billing_information()
     {
-        if (auth()->check()) {
+        // if (auth()->check()) {
             return view('billing-information');
-        } else {
-            $login_cart = 0;
-            session()->put('login_cart', $login_cart);
-            return redirect()->route('UI_Login');
-        }
+        // } else {
+        //     $login_cart = 0;
+        //     session()->put('login_cart', $login_cart);
+        //     return redirect()->route('UI_Login');
+        // }
     }
     public function add_billing_information(Request $request)
     {
@@ -207,20 +207,24 @@ class UICartController extends EmailController
 
      public function event_stripe(Request $req)
     {
-      
+        
         $total = $req->finaltotal;
         $order_number = rand(1999999999999999, 9999999999999999);
-        $user = Auth::user();
+        if(Auth::user()){
+            $user = Auth::user()->email;
+        }else{
+            $user = $req->email;
+        }
         $desc = 'Payment CheckOut';
         $price = $total;
-        $response = $this->stripe_payment($user->email, $req->stripeToken, $price, $desc);
+        $response = $this->stripe_payment($user, $req->stripeToken, $price, $desc);
         if ($response['status'] == 'succeeded') {
 
             $billing_info = session()->get('billing_information');
             // dd($billing_info['billing_address']);
 
             $data_billing = [
-                'user_id' => auth()->user()->id,
+                'user_id' => auth()->user() ? auth()->user()->id : null,
                 'billing_address' => $billing_info['billing_address'],
                 'business' => $billing_info['business'],
                 'city' => $billing_info['city'],
@@ -231,7 +235,7 @@ class UICartController extends EmailController
             $billing = BillingModel::create($data_billing);
             $shippings = session()->get('shipping');
             $data_shipping = [
-                'user_id' => auth()->user()->id,
+                'user_id' => auth()->user() ? auth()->user()->id : null,
                 'shipping_address' => $shippings['shipping_address'],
                 'business' => $shippings['business'],
                 'city' => $shippings['city'],
@@ -244,7 +248,9 @@ class UICartController extends EmailController
             $shipping = ShippingModel::create($data_shipping);
             $data = [
                 'order_number' => $order_number,
-                'user_id' => auth()->user()->id,
+                'first_name' => auth()->user() ? auth()->user()->first_name :$req->first_name,
+                'email' => auth()->user() ? auth()->user()->email : $req->email,
+                'user_id' => auth()->user() ? auth()->user()->id : null,
                 'sub_total' => session()->get('subtotal'),
                 'ship_price' => $total - session()->get('subtotal'),
                 'order_total' => $total,
@@ -259,7 +265,7 @@ class UICartController extends EmailController
             foreach ($cart as $value) {
                 $orderitem = new OrderItemsModel();
                 $orderitem->order_number = $order_number;
-                $orderitem->user_id = auth()->user()->id;
+                $orderitem->user_id = auth()->user() ? auth()->user()->id : null;
                 $orderitem->product_id = $value['id'];
                 $orderitem->quantity = $value['quantity'];
                 $orderitem->save();

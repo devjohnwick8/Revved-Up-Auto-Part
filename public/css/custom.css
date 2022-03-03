@@ -1892,9 +1892,9 @@ img.benheight {
 }
 
 .re_sec .carousel-indicators button img {
-    transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.7s ease-in-out;
+    -moz-transition: opacity 0.7s ease-in-out;
+    -webkit-transition: opacity 0.7s ease-in-out;
 }
 
 .re_sec img.two {
@@ -4241,6 +4241,15 @@ ul.prd-ul li a:hover {}
     text-align: right;
     padding-right: 55px;
 }
+
+.side_subtotal ul h6.hed{ 
+    margin-top: -24px;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+}
+
+
 div#test {
     bottom: auto;
 }
@@ -4835,6 +4844,9 @@ div#test {
     .inner_form button {
         margin: 0 0 10px;
     }
+    /* //Qasim Class */
+    
+    
 
 }
 

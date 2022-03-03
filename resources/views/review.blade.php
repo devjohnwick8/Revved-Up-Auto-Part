@@ -80,8 +80,25 @@
                 <div class="main_place">
                     <form role="form" action="{{route('stripe_post')}}" method="post" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                         @csrf
+
+                        <input type="text" id="finaltotal" name="finaltotal"  value="0" hidden  />
+          
                         <div class='form-row row'>
-                            <input type="text" id="finaltotal" name="finaltotal"  value="0" hidden  />
+                            <div class='col-md-6 col-sm-6 col-xs-6 form-group '>
+                                <div class="my_re">
+                                    <label class='control-label'>First Name</label>
+                                    <input  type='text' name=first_name value="{{auth()->user() ? auth()->user()->first_name : ''}}" class='form-control' >
+                                </div>
+                            </div>
+                            <div class='col-md-6 col-sm-6 col-xs-6 form-group '>
+                                <div class="my_re">
+                                    <label class='control-label'>Email</label>
+                                    <input  type='email' name=email value="{{auth()->user() ? auth()->user()->email : ''}}"}}" class='form-control' >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
                             <div class='col-md-12 col-sm-12 col-xs-12 form-group required'>
                                 <div class="my_re">
                                     <label class='control-label'>Name on Card</label>
@@ -288,12 +305,14 @@
                             <div class="side_subtotal">
                                 <ul>
                                     @php $subtotal = session()->get('subtotal') @endphp
-                                    <li class="subtotaly">Subtotal: $ {{$subtotal ? $subtotal : 0}}
-                                        <br>
-                                    </li>
+                                    <li class="subtotaly"> Subtotal: $ {{$subtotal ? $subtotal : 0}}  </li>
+                                    <h6 class="hed">Standard Free Shipping</h6>
+                                                                       
+                                    
+                                       
+
                                     <li> <h3>Rush Delivery</h3></li>
-                                    <li>Standard Free Shipping
-                                        </li>
+                                    
                                         <br>
                                       
                             

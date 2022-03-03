@@ -2,6 +2,13 @@
   <section class="speedy_sec">
       <div class="container">
           <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="revvedhead">
+                      <span>What Sets As A Part</span>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
               <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-6">
                   <div class="speed_div text-center wow zoomIn" data-wow-duration="2s">
                       <img src="images/sp_1.png" class="img-fluid" alt="">
@@ -9,7 +16,7 @@
                       <small>Free Same Day Shipping! </small>
                   </div>
               </div>
-             
+
               <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-6">
                   <div class="speed_div text-center wow zoomIn" data-wow-duration="2s">
                       <img src="images/sp_3.png" class="img-fluid" alt="">

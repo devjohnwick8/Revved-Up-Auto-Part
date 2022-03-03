@@ -215,10 +215,10 @@ Route::get('/forgot-password', [UIAuthController::class, 'forgot_password'])->na
 Route::post('/create-account-data', [UIAuthController::class, 'create_account_data'])->name('UI_Create_Account_Data');
 Route::post('/login-data', [UIAuthController::class, 'login_data'])->name('UI_Login_Data');
 Route::get('/logout', [UIAuthController::class, 'user_logout'])->name('user_logout');
-Route::get('/change-password', [UIAuthController::class, 'change_password'])->name('UI_change_password')->middleware('auth');; 
-Route::post('/my-password-update/{user?}', [UIAuthController::class, 'change_password_update'])->name('UI_change_password_Updated')->middleware('auth');
-Route::get('/my-profile', [UIAuthController::class, 'my_profile'])->name('UI_my_profile')->middleware('auth');
-Route::post('/my-profile-update/{user?}', [UIAuthController::class, 'my_profile_update'])->name('UI_my_profile_Updated')->middleware('auth');
+Route::get('/change-password', [UIAuthController::class, 'change_password'])->name('UI_change_password');; 
+Route::post('/my-password-update/{user?}', [UIAuthController::class, 'change_password_update'])->name('UI_change_password_Updated');
+Route::get('/my-profile', [UIAuthController::class, 'my_profile'])->name('UI_my_profile');
+Route::post('/my-profile-update/{user?}', [UIAuthController::class, 'my_profile_update'])->name('UI_my_profile_Updated');
 
 
 /**UI SEARCH ROUTES STARTS**/
@@ -228,8 +228,8 @@ Route::post('search-submodel', [UISearchController::class, 'search_submodel'])->
 Route::post('search-engine', [UISearchController::class, 'search_engine'])->name('UI_search_engine');
 /**UI SEARCH ROUTES ENDS**/
 
-Route::get('billing-information', [UICartController::class, 'billing_information'])->name('UI_billing_information')->middleware('auth');
-Route::get('shipping', [UICartController::class, 'shipping'])->name('UI_shipping')->middleware('auth');
+Route::get('billing-information', [UICartController::class, 'billing_information'])->name('UI_billing_information');
+Route::get('shipping', [UICartController::class, 'shipping'])->name('UI_shipping');
 
 
 /**UI ROUTES Starts */
@@ -258,7 +258,7 @@ Route::get('part-not-found/{id}', [UIController::class, 'part_not_found_porduct'
 Route::Post('part-not-found', [UIController::class, 'add_part_not_found'])->name('UI_add_part_not_found');
 
 Route::get('single-product/{id}', [UIController::class, 'single_product'])->name('UI_single_product');
-Route::get('thank-you', [UIController::class, 'thank_you'])->name('UI_thank_you')->middleware('auth');
+Route::get('thank-you', [UIController::class, 'thank_you'])->name('UI_thank_you');
 Route::post('single-product-data', [UISearchController::class, 'shopnow'])->name('UI_shopnow');
 // Route::post('single-product-part-data', [UISearchController::class, 'search_part'])->name('UI_search_part');
 Route::get('single-product-part-data', [UISearchController::class, 'search_part'])->name('UI_search_part');
@@ -268,16 +268,16 @@ Route::get('cart', [UICartController::class, 'cart'])->name('UI_cart');
 Route::post('cart-updated', [UICartController::class, 'cart_update'])->name('UI_cart_update');
 Route::get('delete-cart/{id}', [UICartController::class, 'cart_delete'])->name('UI_cart_delete');
 
-Route::Post('review', [UICartController::class, 'add_shipping'])->name('UI_add_shipping')->middleware('auth');
-Route::get('review', [UICartController::class, 'review'])->name('UI_review')->middleware('auth')->middleware('auth');
+Route::Post('review', [UICartController::class, 'add_shipping'])->name('UI_add_shipping');
+Route::get('review', [UICartController::class, 'review'])->name('UI_review');
 
 // Route::get('part-not-found', [UICartController::class, 'part_not_found'])->name('UI_part_not_found');
 
-Route::Post('shipping', [UICartController::class, 'add_billing_information'])->name('UI_add_billing_information')->middleware('auth');
+Route::Post('shipping', [UICartController::class, 'add_billing_information'])->name('UI_add_billing_information');
 Route::post('add-to-cart', [UICartController::class, 'add_to_cart'])->name('UI_add_to_cart');
-Route::post('/payment', [UICartController::class, 'event_stripe'])->name('stripe_post')->middleware('auth');
+Route::post('/payment', [UICartController::class, 'event_stripe'])->name('stripe_post');
 
-Route::get('my_orders/', [UICartController::class, 'my_orders'])->name('UI_my_orders')->middleware('auth');
+Route::get('my_orders/', [UICartController::class, 'my_orders'])->name('UI_my_orders');
 Route::get('my_orders/{order_number}', [UICartController::class, 'my_orders_email'])->name('UI_my_orders_email');
 Route::get('/my-order-items/{order}', [UICartController::class, 'my_order_items'])->name('UI_my_order_items');
 /**UI Cart Routes ends*/

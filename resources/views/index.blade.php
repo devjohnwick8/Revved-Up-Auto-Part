@@ -38,7 +38,7 @@
               <div class="col-xs-12 col-sm-6 col-md-6 align-self-center">
                 <div class="banner_text wow fadeInLeft" data-wow-duration="2s">
                   @include('layouts/flash-message')
-                  <h1 class="wow zoomIn">Inhouse Fabrication</h1>
+                  <h1 class="wow zoomIn">In House Fabrication</h1>
      
                 </div>
                 <div class="mera_btn">
