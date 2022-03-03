@@ -43,15 +43,12 @@
                                         <tr>
                                             <td>First Name</td>
 
-                                            <td>{{$orders->get_user->first_name}}</td>
+                                            <td>{{$orders->first_name}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>Last Name</td>
-                                            <td>{{$orders->get_user->last_name}}</td>
-                                        </tr>
+                                        
                                         <tr>
                                             <td>User Email</td>
-                                            <td>{{$orders->get_user->email}}</td>
+                                            <td>{{$orders->email}}</td>
                                         </tr>
                                         <tr>
                                             <td>Shipping Address</td>
@@ -75,6 +72,18 @@
                                                 Refunded
                                             @elseif($orders->status === 6)
                                                 Failed
+                                            @endif
+                                             
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Authorize</td>
+
+                                            <td>
+                                            @if($orders->login_status === 0)
+                                                without-Login
+                                            @elseif($orders->login_status === 1)
+                                                Login
                                             @endif
                                              
                                             </td>

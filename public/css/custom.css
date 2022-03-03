@@ -4968,11 +4968,15 @@ div#test {
     }
 
     .important {
-        margin-top: 20%;
+        margin-top: 70%;
     }
 
     .banner_text {
-        bottom: 290px;
+        bottom: 40px;
+    }
+    .inner_banner .black_bg h1 {
+        font-size: 60px;
+        line-height: 60px;
     }
 
     .form_sec {

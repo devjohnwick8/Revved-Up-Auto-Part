@@ -255,6 +255,7 @@ class UICartController extends EmailController
                 'ship_price' => $total - session()->get('subtotal'),
                 'order_total' => $total,
                 'status' => 0,
+                'login_status' => auth()->user() ? 1 : 0,
                 'billing_id' => $billing->id,
                 'shipping_id' => $shipping->id,
                 'payment_id' => $response['id'],

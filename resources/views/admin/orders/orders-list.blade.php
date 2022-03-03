@@ -32,10 +32,11 @@
                         <th class="border-0">Shipping Address</th>
 
                         <th class="border-0">Order Total</th>
+                        <th class="border-0">Authorize</th>
                         <th class="border-0">Status</th>
                         <th class="border-0">Action</th>
 
-                  
+
                     </tr>
                 </thead>
                 <tbody>
@@ -43,10 +44,25 @@
                     <tr>
                         <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
                         <td class="border-0 "><strong>{{$value->order_number}}</strong></td>
-                        <td class="border-0 "><strong>{{$value->get_user ? $value->get_user->first_name : ''}}</strong></td>
+                        <td class="border-0 "><strong>{{$value->first_name}}</strong></td>
                         <td class="border-0 "><strong>{{$value->get_shipping ? $value->get_shipping->shipping_address : ''}}</strong></td>
                         <td class="border-0 "><strong>{{$value->order_total}}</strong></td>
                         <!-- <td class="border-0 "><strong></strong></td> -->
+                        <td class="border-0 font-weight-bold">
+                            <label class="btn
+                                    @if($value->login_status === 0)
+                                        btn-warning
+                                    @elseif($value->login_status === 1)
+                                    btn-success
+                                    @endif">
+                                @if($value->login_status === 0)
+                                Without Login
+                                @elseif($value->login_status === 1)
+                                Login
+                                @endif
+
+                            </label>
+                        </td>
 
                         <td class="border-0 font-weight-bold">
                             <button class="btn
@@ -92,6 +108,8 @@
                                 <a class="dropdown-item" href="{{route('admin_order_status',[$value->id,6])}}">Failed</a>
                             </div>
                         </td>
+
+                        
                         <td class="border-0">
                             <a href="{{route('admin_order_views', [$value->id])}}" class="text-secondary mr-3"><i class="fas fa-edit"></i>View</a>
                         </td>
