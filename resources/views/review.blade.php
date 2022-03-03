@@ -257,8 +257,8 @@
             <div class="col-md-5 col-sm-5 col-xs-12">
                 <div class="summary">
                     <h2>Order Summary</h2>
-                    <h3>Need Help? Text or </h3>
-                    <h4>Call 888-297-3077</h4>
+                    <h3> Need Help Call Us  </h3>
+                    <h4> <a href="tel:888-297-3077">888-297-3077</a></h4>
                     <!-- <h5>Need to Make a </h5>
                     <h6>Change? <a href="javascript:void(0)"> EDIT Cart</a></h6> -->
                 </div>

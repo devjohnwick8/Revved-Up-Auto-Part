@@ -92,11 +92,11 @@
                     <option>Select Model*</option>
                   </select>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <select name="submodel" id="submodel" required>
                     <option>Select Submodel*</option>
                   </select>
-                </div>
+                </div> -->
               </div>
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
