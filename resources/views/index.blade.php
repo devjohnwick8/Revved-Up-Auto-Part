@@ -69,7 +69,7 @@
               @csrf
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <select name="make" id="make" required>
+                  <!-- <select name="make" id="make" required>
                     <option hidden disabled selected value="">Select Product*
                     </option>
                     @foreach($make as $value)
@@ -77,36 +77,36 @@
                       {{$value->title}}
                     </option>
                     @endforeach
-                  </select>
+                  </select> -->
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <select name="year" id="year" required>
+                  <!-- <select name="year" id="year" required>
                     <option hidden disabled selected value="">Select Year*
                     </option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <select name="model" id="model" required>
+                  <!-- <select name="model" id="model" required>
                     <option>Select Model*</option>
-                  </select>
+                  </select> -->
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <!-- <select name="submodel" id="submodel" required>
+                    <option>Select Submodel*</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <!-- <select name="engine" id="engine" required>
+                    <option>Select Engine*</option>
+                  </select> -->
                 </div>
                 <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <select name="submodel" id="submodel" required>
-                    <option>Select Submodel*</option>
-                  </select>
-                </div> -->
-              </div>
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <select name="engine" id="engine" required>
-                    <option>Select Engine*</option>
-                  </select>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <button type="submit">Shop Now</button>
-                </div>
+                </div> -->
               </div>
               <div id="test"></div>
             </form>
@@ -214,7 +214,7 @@
               }
             </script>
             @endpush
-            <h4 class="or"> OR </h4>
+            <!-- <h4 class="or"> OR </h4> -->
             <!-- <form method="POST" action="{{route('UI_search_part')}}">@csrf -->
             <form method="POST" action="">
               @csrf

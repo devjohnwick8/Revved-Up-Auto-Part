@@ -4,7 +4,7 @@
           <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <div class="revvedhead">
-                      <span>What Sets Us A Part</span>
+                      <span>What Sets Us Apart</span>
                   </div>
               </div>
           </div>
