@@ -42,7 +42,6 @@
             
                         <li>MAKE: <span>{{$product ? $product->product_make->title : ''}}</span></li>
                         <li>MODEL: <span>{{$product ? $product->product_model->title : ''}}</span></li>
-                        <li>SUBMODEL: <span>{{$product ? $product->product_submodel->title : ''}}</span></li>
                         <li>YEAR: <span>{{$product ? $product->product_year->title : ''}}</span></li>
                         <li>ENGINE: <span>{{$product ? $product->product_engine->title : ''}}</span></li>
 

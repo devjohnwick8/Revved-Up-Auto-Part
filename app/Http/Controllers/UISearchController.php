@@ -94,11 +94,11 @@ class UISearchController extends Controller
     public function search_part(Request $request)
     {
         if($request->ajax()){
-            
          if($request->search != null)  {
             $part = ProductsModel::where('sku','LIKE','%'.$request->search.'%')
             ->orWhere('title','LIKE','%'.$request->search.'%')
             ->get();
+            
                 $output = '';
                 if (count($part) > 0) {
                     $output .= '<table class="table table-striped"><tbody>';

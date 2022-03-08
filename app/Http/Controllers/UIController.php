@@ -32,6 +32,9 @@ class UIController extends EmailController
     public function single_product($id)
     {
         $single_product = ProductsModel::with('images_take1')->where('id', $id)->first();
+        if($single_product->stock == 0){
+            return redirect()->route('UI_part_not_found_product', [$single_product->id]);
+        }
         $image_product = ProductImageModel::where('product_id', $id)->get();
         $category = SubCategoriesModel::where('id', $single_product->sub_categories)->first();
         $product_available = ProductAvailableModel::where('product_id', $id)->get();
@@ -58,8 +61,9 @@ class UIController extends EmailController
     }
     public function part_not_found_porduct($id)
     {
-        $product = ProductsModel::with('product_category', 'product_year', 'product_model', 'product_submodel', 'product_engine', 'product_make')
+        $product = ProductsModel::with('product_sub_category', 'product_year', 'product_model', 'product_submodel', 'product_engine', 'product_make')
             ->where('id', $id)->first();
+           
         return view('part-not-found', compact('product'));
     }
 

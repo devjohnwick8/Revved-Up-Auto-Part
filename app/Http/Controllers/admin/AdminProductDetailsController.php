@@ -141,15 +141,22 @@ class AdminProductDetailsController extends Controller
     }
     function products_add_edit_data(ProductsModel $products , Request $request)
     {
-        $validated = $request->validate([
-            "title" => "required|max:255",
-          
-            "sku" => "required|max:255",
-
-        ]);
+       
   
         $create = 1;
         (isset($products->id) and $products->id>0)?$create=0:$create=1;
+
+        if($create == 1){
+            $validated = $request->validate([
+                "title" => "required|max:255|unique:products,title",
+                "sku" => "required|max:255|unique:products,sku",
+            ]);
+        }else{
+            $validated = $request->validate([
+                "title" => "required|max:255",
+                "sku" => "required|max:255",
+            ]);
+        };
         $products->sub_categories = $request->sub_categories;
         $products->title = $validated['title'];
         $products->description = $request->description;

@@ -41,7 +41,11 @@
                                         <div class="mb-4">
                                             <label for="title">Title</label>
                                             <input type="text" class="form-control" required name="title" placeholder="Enter your title...">
+                                                @if ($errors->has('title'))
+                                                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                                                @endif
                                         </div>
+                                        
                                         <div class="my-4">
                                             <label for="textarea">Description</label>
                                             <textarea class="form-control" placeholder="Enter your message..." id="textarea" rows="5" name="description"></textarea>
@@ -119,6 +123,9 @@
                                             <div class=" col-sm-6 mb-4">
                                                 <label for="title">SKU</label>
                                                 <input type="text" class="form-control" required name="sku" placeholder="Enter your sku...">
+                                                @if ($errors->has('sku'))
+                                                    <span class="text-danger">{{ $errors->first('sku') }}</span>
+                                                @endif
                                             </div>
                                             <div class=" col-sm-6 mb-4">
                                                 <label for="title">OEM</label>
