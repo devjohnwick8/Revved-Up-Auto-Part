@@ -77,7 +77,7 @@
                                     </form>
                                 </td>
                                 <td class="col-md-1 col-sm-1 col-xs-12">
-                                    <h4>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price'] }}</h4>
+                                    <h4>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price'] }}.00</h4>
                                     @php $subtotal += $value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price'] @endphp
 
                                 </td>
@@ -109,7 +109,7 @@
                                 <div class="main_sub">
 
 
-                                    <h6>${{$subtotal}} </h6>
+                                    <h6>${{$subtotal}}.00 </h6>
 
                                     <h6>Free</h6>
                                 </div>
@@ -126,8 +126,6 @@
                                 <!-- <div class="main_pera">
                                     <p>Applicable ship/handling will be calculated at final page checkout</p>
                                     <p>Click blue asterick for more info on shipment and warranty inclusions</p>
-
-
                                 </div> -->
                             </div>
                         </div>
@@ -147,7 +145,6 @@
                     <div class="cart_bt">
 
                         <button type="submit"><i class="fas fa-cart-arrow-down"></i> <a href="{{route('UI_billing_information')}}">Begin Checkout</a></button>
-
                         <!-- <button type="submit"><i class="fas fa-sync-alt"></i> Update
                                 Cart</button> -->
                     </div>

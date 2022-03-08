@@ -69,7 +69,7 @@
               @csrf
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <!-- <select name="make" id="make" required>
+                  <select name="make" id="make" required>
                     <option hidden disabled selected value="">Select Product*
                     </option>
                     @foreach($make as $value)
@@ -77,65 +77,68 @@
                       {{$value->title}}
                     </option>
                     @endforeach
-                  </select> -->
+                  </select>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <!-- <select name="year" id="year" required>
+                  <select name="year" id="year" required>
                     <option hidden disabled selected value="">Select Year*
                     </option>
-                  </select> -->
+                  </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <!-- <select name="model" id="model" required>
+                  <select name="model" id="model" required>
                     <option>Select Model*</option>
-                  </select> -->
+                  </select>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <select name="engine" id="engine" required>
+                    <option>Select Engine*</option>
+                  </select>
                   <!-- <select name="submodel" id="submodel" required>
                     <option>Select Submodel*</option>
                   </select> -->
                 </div>
               </div>
+              
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <!-- <select name="engine" id="engine" required>
                     <option>Select Engine*</option>
                   </select> -->
                 </div>
-                <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <button type="submit">Shop Now</button>
-                </div> -->
+                </div>
               </div>
+              <br>
               <div id="test"></div>
             </form>
             <input type="hidden" value="0" id="make_demo" />
             <input type="hidden" value="0" id="year_demo" />
             <input type="hidden" value="0" id="model_demo" />
-            <input type="hidden" value="0" id="submodel_demo" />
             
             @push('js')
             <script>
-              UpdateItemAPI($('#make'), "{{route('UI_search_year')}}", $('#year'), 'make', $('#make_demo'), $('#year_demo'), $('#model_demo'), $('#submodel_demo'));
-              UpdateItemAPI($('#year'), "{{route('UI_search_model')}}", $('#model'), 'year', $('#make'), $('#year'), $('#model'), $('#submodel'));
-              UpdateItemAPI($('#model'), "{{route('UI_search_submodel')}}", $('#submodel'), 'model', $('#make'), $('#year'), $('#model'), $('#submodel'));
-              UpdateItemAPI($('#submodel'), "{{route('UI_search_engine')}}", $('#engine'), 'submodel', $('#make'), $('#year'), $('#model'), $('#submodel'));
+                UpdateItemAPI($('#make'), "{{route('UI_search_year')}}", $('#year'), 'make', $('#make_demo'), $('#year_demo'), $('#model_demo'), );
+              UpdateItemAPI($('#year'), "{{route('UI_search_model')}}", $('#model'), 'year', $('#make'), $('#year'), $('#model'));
+              UpdateItemAPI($('#model'), "{{route('UI_search_engine')}}", $('#engine'), 'model', $('#make'), $('#year'), $('#model'));
+              
 
-              function UpdateItemAPI(change, route, section, blank, make, year, model, submodel) {
+              function UpdateItemAPI(change, route, section, blank, make, year, model, ) {
                 change.change(function() {
                   let reqdata = change.val();
                   let make_demo = make.val();
                   let year_demo = year.val();
                   let model_demo = model.val();
-                  let submodel_demo = submodel.val();
+                 
 
                   var data = {
                     'reqdata': reqdata,
                     'make': make_demo,
                     'year': year_demo,
                     'model': model_demo,
-                    'submodel': submodel_demo,
                     '_token': '{{csrf_token()}}'
                   };
                   var url = route;
@@ -150,12 +153,6 @@
                       );
                       $('#model').prop("disabled", true);
                       $('#model').css("background-color", "#ccc");
-
-                      $('#submodel').html(
-                        '<option hidden disabled selected value="">Select SubModel*</option>'
-                      );
-                      $('#submodel').prop("disabled", true);
-                      $('#submodel').css("background-color", "#ccc");
                       $('#engine').html(
                         '<option hidden disabled selected value="">Select Engine*</option>'
                       );
@@ -167,30 +164,18 @@
                       );
                       $('#model').prop("disabled", false);
                       $('#model').css("background-color", "#fff");
-                      $('#submodel').html(
-                        '<option hidden disabled selected value="">Select SubModel*</option>'
-                      );
-
-
+                      
                       $('#engine').html(
                         '<option hidden disabled selected value="">Select Engine*</option>'
                       );
                     } else if (blank === 'model') {
-                      $('#submodel').html(
-                        '<option hidden disabled selected value="">Select SubModel*</option>'
-                      );
-                      $('#submodel').prop("disabled", false);
-                      $('#submodel').css("background-color", "#fff");
-                      $('#engine').html(
-                        '<option hidden disabled selected value="">Select Engine*</option>'
-                      );
-                    } else if (blank === 'submodel') {
                       $('#engine').html(
                         '<option hidden disabled selected value="">Select Engine*</option>'
                       );
                       $('#engine').prop("disabled", false);
-                      $('#engine').css("background-color", "#fff")
-                    }
+                      $('#engine').css("background-color", "#fff");
+                    
+                    } 
 
                     var len = res.resp.length;
                     for (var i = 0; i < len; i++) {
@@ -203,9 +188,7 @@
                     $('#model').html(
                       '<option hidden disabled selected value="">Select Model*</option>'
                     );
-                    $('#submodel').html(
-                      '<option hidden disabled selected value="">Select SubModel*</option>'
-                    );
+                    
                     $('#engine').html(
                       '<option hidden disabled selected value="">Select Engine*</option>'
                     );
@@ -214,7 +197,7 @@
               }
             </script>
             @endpush
-            <!-- <h4 class="or"> OR </h4> -->
+            <h4 class="or"> OR </h4>
             <!-- <form method="POST" action="{{route('UI_search_part')}}">@csrf -->
             <form method="POST" action="">
               @csrf

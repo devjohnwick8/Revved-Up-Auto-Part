@@ -155,7 +155,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class=" col-sm-6 mb-4">
+                                            <!-- <div class=" col-sm-6 mb-4">
                                                 <label for="title">SubModel</label>
                                                 <select id="year" name="submodel" class="form-control">
                                                     <option selected hidden disabled>Please select submodel</option>
@@ -163,9 +163,10 @@
                                                     <option value="{{$value->id}}">{{$value->title}}</option>
                                                     @endforeach
                                                 </select>
-                                            </div>
-                                        </div>
-                                        <div class="mb-4">
+                                            </div> -->
+                                        <!-- </div> -->
+                                        <!-- <div class="mb-4"> -->
+                                        <div class=" col-sm-6 mb-4">
                                             <label for="title">Engine</label>
                                             <select id="year" name="engine" class="form-control">
                                                 <option selected hidden disabled>Please select engine</option>

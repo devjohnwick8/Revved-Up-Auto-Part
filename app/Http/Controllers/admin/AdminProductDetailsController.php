@@ -143,6 +143,7 @@ class AdminProductDetailsController extends Controller
     {
         $validated = $request->validate([
             "title" => "required|max:255",
+          
             "sku" => "required|max:255",
 
         ]);

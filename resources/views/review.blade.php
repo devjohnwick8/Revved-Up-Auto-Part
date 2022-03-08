@@ -276,13 +276,12 @@
                         </thead>
                         <tbody>
                             @if($products)
-                          
                             @foreach($products as $value)
                             <tr>
                                 <th class="recap">{{$value->title}} </th>
                                 <td>${{$value->our_price}}</td>
                                 <td>{{$cart[$value->id]['quantity'] }}</td>
-                                <td>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price']}}</td>
+                                <td>${{$value->our_price * $cart[$value->id]['quantity'] + $cart[$value->id]['price']}}.00</td>
                                 <!-- <th class="recap">2019 AUDI S3-2..0 liter L4-CID Radiator GAS, MAIN</th>
                                 <td>$160.80</td>
                                 <td>$160.80</td>
@@ -305,7 +304,7 @@
                             <div class="side_subtotal">
                                 <ul>
                                     @php $subtotal = session()->get('subtotal') @endphp
-                                    <li class="subtotaly"> Subtotal: $ {{$subtotal ? $subtotal : 0}}  </li>
+                                    <li class="subtotaly"> Subtotal: $ {{$subtotal ? $subtotal : 0}}.00  </li>
                                     <h6 class="hed">Standard Free Shipping</h6>
                                                                        
                                     
@@ -320,27 +319,27 @@
                                     
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexRadioDefault1">
-                                        FedEx Express Saver (3 Business days) - $71
+                                        FedEx Express Saver (3 Business days) - $71.00
                                         </label>
-                                        <input class="form-check-input"  type="radio"  name="myradio" value="71"  checked>
+                                        <input class="form-check-input"  type="radio"  name="myradio" value="71.00"  checked>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                        FedEx 2-Day - $84
+                                        FedEx 2-Day - $84.00
                                         </label>
-                                    <input class="form-check-input" type="radio"  name="myradio" value="84"  >
+                                    <input class="form-check-input" type="radio"  name="myradio" value="84.00"  >
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexRadioDefault2">
-                                        FedEx Priority Overnight - $104
+                                        FedEx Priority Overnight - $104.00
                                         </label>
-                                    <input class="form-check-input " type="radio" name="myradio" value="104" >
+                                    <input class="form-check-input " type="radio" name="myradio" value="104.00" >
                                     </div>
                                     @else
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="myradio" value="71"  checked>
+                                        <input class="form-check-input" type="radio" name="myradio" value="71.00"  checked>
                                         <label class="form-check-label" for="flexRadioDefault1">
-                                        FedEx Express Saver (3 Business days) - $71
+                                        FedEx Express Saver (3 Business days) - $71.00
                                         </label>
                                     </div>
                                     @endif
@@ -348,7 +347,7 @@
                                     
                                     <!-- <li>Shipping: $89.85</li>
                                     <li>Tax/Handle:$0.00</li> -->
-                                    <li class="subtotaly">TOTAL: $ <span id="total">{{$subtotal ? $subtotal : 0}}</span></li>
+                                    <li class="subtotaly">TOTAL: $ <span id="total">{{$subtotal ? $subtotal : 0}}.00</span></li>
 
                                 </ul>
                             </div>
@@ -385,12 +384,13 @@ console.log(radio);
 
 jQuery(document).ready(function(){
     let x =   parseInt(71) + parseInt('{{$subtotal}}');
-    $('#total').html(x);
+    $('#total').html(x + '.00');
     $('#finaltotal').val(x);
 
 $('input:radio[name="myradio"]').change(function(){
     let x = parseInt($(this).val()) + parseInt('{{$subtotal}}');
-    $('#total').html(x);
+    
+    $('#total').html(x + '.00');
     $('#finaltotal').val(x);
 
     

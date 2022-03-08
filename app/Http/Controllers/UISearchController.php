@@ -43,33 +43,35 @@ class UISearchController extends Controller
         }
     }
 
-    public function search_submodel(Request $request)
-    {
-        $model = ProductsModel::with('get_product_submodel')->where('year', $request->year)->where('make', $request->make)->where('model', $request->model)->get();
-        // dd($model);
-        if ($model !== null) {
-            $test = array();
-            foreach ($model as $model_value) {
-                foreach ($model_value->get_product_submodel as $value) {
-                    $test[] = $value;
-                }
-            }
-            return response()->json(['resp' => $test, 'status' => 1]);
-        } else {
-            return response()->json(['status' => 0]);
-        }
-    }
+    // public function search_submodel(Request $request)
+    // { dd($request);
+    //     $model = ProductsModel::with('get_product_submodel')->where('year', $request->year)->where('make', $request->make)->where('model', $request->model)->get();
+    //     // dd($model);
+    //     if ($model !== null) {
+    //         $test = array();
+    //         foreach ($model as $model_value) {
+    //             foreach ($model_value->get_product_submodel as $value) {
+    //                 $test[] = $value;
+    //             }
+    //         }
+    //         return response()->json(['resp' => $test, 'status' => 1]);
+    //     } else {
+    //         return response()->json(['status' => 0]);
+    //     }
+    // }
     public function search_engine(Request $request)
     {
-        $submodel = ProductsModel::with('get_product_engine')->where('year', $request->year)->where('make', $request->make)->where('model', $request->model)->where('submodel', $request->reqdata)->get();
-        // dd($submodel);
+        
+        $submodel = ProductsModel::with('get_product_engine')->where('year', $request->year)->where('make', $request->make)->where('model', $request->model)->get();
         if ($submodel !== null) {
             $test = array();
+
             foreach ($submodel as $submodel_value) {
                 foreach ($submodel_value->get_product_engine as $value) {
                     $test[] = $value;
                 }
             }
+           
             return response()->json(['resp' => $test, 'status' => 1]);
         } else {
             return response()->json(['status' => 0]);
@@ -81,7 +83,7 @@ class UISearchController extends Controller
     {
 
 
-        $shopnow = ProductsModel::where('make', $request->make)->where('year', $request->year)->where('model', $request->model)->where('submodel', $request->submodel)->where('engine', $request->engine)->first();
+        $shopnow = ProductsModel::where('make', $request->make)->where('year', $request->year)->where('model', $request->model)->where('engine', $request->engine)->first();
         if ($shopnow->stock > 0) {
             return redirect()->route('UI_single_product', [$shopnow->id]);
         } else {
