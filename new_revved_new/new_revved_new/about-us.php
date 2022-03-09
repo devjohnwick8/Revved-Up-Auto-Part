@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="Aboutimg">
-            <img src="images/about-img2.jpg" alt="" class="img-fluid">
+            <img src="{{asset('images/about-img2.jpg')}}" alt="" class="img-fluid">
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

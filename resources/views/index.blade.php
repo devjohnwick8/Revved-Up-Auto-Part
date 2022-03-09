@@ -265,7 +265,7 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="Aboutimg">
-            <img src="http://localhost:8000/images/about-img2.jpg" alt="" class="img-fluid">
+            <img src="{{asset('images/about-img2.jpg')}}" alt="" class="img-fluid">
           </div>
         </div>
       </div>
