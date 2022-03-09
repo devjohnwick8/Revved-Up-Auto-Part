@@ -5404,3 +5404,8 @@ div#test {
         left: 100px;
     }
 }
+
+.sh {
+    margin:0 auto;
+    display: table;
+}
