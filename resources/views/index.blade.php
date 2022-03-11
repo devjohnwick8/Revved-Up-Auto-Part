@@ -271,6 +271,22 @@
       </div>
     </div>
   </section>
+  
+  <!-- radiator sec start  -->
+  <section class="big_imgsec">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="big_img">
+          <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
+          <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<br />
 <!-- categorie_sec start  -->
 <section class="categorie_sec">
   <div class="container">
@@ -335,21 +351,8 @@
     <br>
   </div>
 </section>
-<!-- radiator sec start  -->
-<section class="big_imgsec">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="big_img">
-          <img src="{{asset('images/big.jpg')}}" class="img-fluid" alt="">
-          <a href="{{route('UI_product_list',[1])}}" class="btn btn_red"> Shop Now</a>
-        </div>
 
-      </div>
-    </div>
-  </div>
-</section>
-<br />
+
 
 @include('layouts.review-slider')
 @endsection
